@@ -1,6 +1,3 @@
-HTML
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -420,12 +417,27 @@ HTML
             letter-spacing: 0.5px;
         }
 
+        .shipping-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+
         .product-img-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 130%; /* Aspect ratio */
+            padding-top: 130%;
             overflow: hidden;
             background-color: #f0f0f0;
+            cursor: pointer;
         }
 
         .product-img-wrapper img {
@@ -459,7 +471,7 @@ HTML
         }
 
         .product-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 8px;
@@ -472,12 +484,6 @@ HTML
             margin-bottom: 16px;
             display: flex;
             gap: 12px;
-        }
-
-        .product-details span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
         }
 
         .product-footer {
@@ -895,7 +901,6 @@ HTML
             60% {transform: translateY(-3px);}
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 900px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -941,7 +946,7 @@ HTML
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        ✨ Free Shipping Across India on Orders Above ₹2,999 | Direct WhatsApp Ordering Available
+        ✨ Free Shipping Across India on All Sarees | Direct WhatsApp Ordering Available
     </div>
 
     <!-- Navigation Header -->
@@ -967,20 +972,20 @@ HTML
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h2>Weaving Timeless Stories from Bengal & Bihar</h2>
-                <p>Discover handcrafted Jamdanis, Bhagalpuri Silks, Kantha Embroidery, and Fulia Linens—woven directly at the looms of master artisans.</p>
+                <h2>Exquisite Linen Silk Sarees with Zari Border & Tassels</h2>
+                <p>Discover our newly launched festive collection in rich Purple, Rose Pink, Sky Blue, and Copper Brown shades. Special launch price of ₹1,999 with Free Shipping across India!</p>
                 <div class="hero-buttons">
                     <a href="#catalog" class="btn-primary">
                         Explore Collection <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women,%20I'd%20like%20to%20view%20your%20latest%20handloom%20saree%20catalog." target="_blank" class="btn-whatsapp">
+                    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women,%20I'd%20like%20to%20order%20the%201999%20Linen%20Silk%20Saree%20Collection." target="_blank" class="btn-whatsapp">
                         <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
             </div>
             <div class="hero-image-grid">
-                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" alt="Dhakai Jamdani Saree" class="hero-img">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" alt="Bhagalpuri Tussar Silk Saree" class="hero-img">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" alt="Linen Silk Saree Purple" class="hero-img">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" alt="Linen Silk Saree Rose Pink" class="hero-img">
             </div>
         </div>
     </section>
@@ -989,7 +994,7 @@ HTML
     <section class="story-section">
         <div class="story-container">
             <h3 class="story-title brand-font">Rooted in Heritage</h3>
-            <p class="story-text">Every saree in our collection is created using traditional handloom techniques passed down through generations of weavers in Fulia, Shantipur, Bhagalpur, and Bolpur. No machines, no mass production—just pure craft and elegance.</p>
+            <p class="story-text">Every saree in our collection is created using traditional handloom techniques passed down through generations. Featuring rich zari weave palla, intricate jacquard borders, and matching contrast tassel details.</p>
         </div>
     </section>
 
@@ -997,8 +1002,8 @@ HTML
     <section class="catalog-container" id="catalog">
         <div class="section-header">
             <div class="section-title">
-                <h3>Our Curated Weaves</h3>
-                <p>Pure Handloom • Certified Quality • Direct Weaver Sourcing</p>
+                <h3>Linen Silk Zari Collection (₹1,999)</h3>
+                <p>Soft Linen Silk • Rich Zari Pallu • Matching Tassels • Free Shipping</p>
             </div>
         </div>
 
@@ -1006,20 +1011,20 @@ HTML
         <div class="filter-wrapper">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" placeholder="Search by weave, fabric, or region (e.g. Jamdani, Silk)..." onkeyup="filterProducts()">
+                <input type="text" id="searchInput" placeholder="Search by color (e.g. Purple, Pink, Blue, Rust)..." onkeyup="filterProducts()">
             </div>
             <div class="filter-tags">
-                <button class="tag-btn active" onclick="filterCategory('all', this)">All Weaves</button>
-                <button class="tag-btn" onclick="filterCategory('Jamdani', this)">Dhakai Jamdani</button>
-                <button class="tag-btn" onclick="filterCategory('Silk', this)">Bhagalpuri Silk</button>
-                <button class="tag-btn" onclick="filterCategory('Kantha', this)">Kantha Stitch</button>
-                <button class="tag-btn" onclick="filterCategory('Linen', this)">Fulia Linen</button>
+                <button class="tag-btn active" onclick="filterCategory('all', this)">All Colors</button>
+                <button class="tag-btn" onclick="filterCategory('Purple', this)">Purple</button>
+                <button class="tag-btn" onclick="filterCategory('Pink', this)">Rose Pink</button>
+                <button class="tag-btn" onclick="filterCategory('Blue', this)">Sky Blue</button>
+                <button class="tag-btn" onclick="filterCategory('Brown', this)">Copper Brown</button>
             </div>
         </div>
 
         <!-- Product Grid -->
         <div class="product-grid" id="productGrid">
-            <!-- Products will be dynamically populated via JavaScript -->
+            <!-- Products populated via JS -->
         </div>
     </section>
 
@@ -1028,15 +1033,15 @@ HTML
         <div class="footer-grid">
             <div class="footer-about">
                 <h4>GRACE OF WOMEN</h4>
-                <p>Bringing authentic, traditional handloom sarees from the artisan roots of Bengal & Bihar straight to your doorstep.</p>
+                <p>Bringing authentic, traditional handloom sarees from the artisan roots directly to your doorstep.</p>
             </div>
             <div class="footer-links">
                 <h5>Our Weaves</h5>
                 <ul>
+                    <li><a href="#catalog">Linen Silk Zari Sarees</a></li>
                     <li><a href="#catalog">Dhakai Jamdani</a></li>
                     <li><a href="#catalog">Bhagalpuri Tussar Silk</a></li>
                     <li><a href="#catalog">Bolpur Kantha Stitch</a></li>
-                    <li><a href="#catalog">Fulia Handcrafted Linen</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -1076,15 +1081,16 @@ HTML
             <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
             <img src="" id="modalImg" class="modal-img" alt="Saree Image">
             <div class="modal-body">
-                <span class="product-region" id="modalRegion">BENGAL HANDLOOM</span>
+                <span class="product-region" id="modalRegion">LINEN SILK COLLECTION</span>
                 <h3 class="modal-title" id="modalTitle">Saree Title</h3>
-                <div class="modal-price" id="modalPrice">₹0</div>
+                <div class="modal-price" id="modalPrice">₹1,999</div>
                 <p class="modal-desc" id="modalDesc">Detailed description...</p>
                 <ul class="spec-list">
-                    <li><span>Fabric:</span> <span id="modalFabric">Pure Cotton</span></li>
-                    <li><span>Weave Type:</span> <span id="modalWeave">Handloom</span></li>
-                    <li><span>Blouse Piece:</span> <span id="modalBlouse">Included</span></li>
-                    <li><span>Wash Care:</span> <span>Dry Clean / Gentle Handwash</span></li>
+                    <li><span>Fabric:</span> <span id="modalFabric">Linen Silk</span></li>
+                    <li><span>Border & Pallu:</span> <span id="modalWeave">Rich Jacquard Zari Weave</span></li>
+                    <li><span>Details:</span> <span>Matching Contrast Tassels</span></li>
+                    <li><span>Blouse Piece:</span> <span id="modalBlouse">Included (Running Unstitched)</span></li>
+                    <li><span>Shipping:</span> <span style="color: #25D366; font-weight:700;">FREE SHIPPING</span></li>
                 </ul>
                 <div style="display: flex; gap: 12px; margin-top: auto;">
                     <button class="btn-primary" style="flex: 1;" id="modalAddCartBtn">Add to Bag</button>
@@ -1118,79 +1124,55 @@ HTML
     </div>
 
     <script>
-        // Store Catalog Data (Bengal & Bihar Handloom Sarees)
+        // Store Catalog Data (4 Color Variants at ₹1,999 with Free Shipping)
         const products = [
             {
                 id: 1,
-                name: "Royal White & Gold Bengal Dhakai Jamdani",
-                category: "Jamdani",
-                region: "Fulia, West Bengal",
-                price: 3499,
-                originalPrice: 4299,
-                fabric: "Muslin Cotton Thread Work",
-                blouse: "Included (Unstitched)",
+                name: "Royal Purple Linen Silk Saree with Zari Border",
+                category: "Purple",
+                region: "Linen Silk Collection",
+                price: 1999,
+                originalPrice: 2999,
+                fabric: "Soft Premium Linen Silk",
+                blouse: "Included (Running Unstitched)",
                 image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800",
-                desc: "Exquisite hand-woven Dhakai Jamdani saree featuring traditional geometric floral motifs woven painstakingly into ultra-soft white muslin cotton fabric."
+                desc: "Stunning Royal Deep Purple Linen Silk Saree woven with rich metallic zari borders, elaborate floral pallu jacquard, and handcrafted gold and purple fringe tassels."
             },
             {
                 id: 2,
-                name: "Pure Bhagalpuri Tussar Silk Saree",
-                category: "Silk",
-                region: "Bhagalpur, Bihar",
-                price: 4899,
-                originalPrice: 5999,
-                fabric: "100% Pure Tussar Silk",
-                blouse: "Included (Matching Tussar)",
+                name: "Rose Pink Linen Silk Saree with Zari Border",
+                category: "Pink",
+                region: "Linen Silk Collection",
+                price: 1999,
+                originalPrice: 2999,
+                fabric: "Soft Premium Linen Silk",
+                blouse: "Included (Running Unstitched)",
                 image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800",
-                desc: "Naturally textured Bhagalpuri Tussar Silk saree in warm earthy beige with rich hand-painted contrast borders and rich zari pallu."
+                desc: "Graceful Crimson Rose Pink Linen Silk Saree featuring antique copper zari pallu weave and bright pink/gold contrast tassels along the border."
             },
             {
                 id: 3,
-                name: "Bolpur Hand-embroidered Kantha Stitch",
-                category: "Kantha",
-                region: "Bolpur Santiniketan, Bengal",
-                price: 3999,
-                originalPrice: 4799,
-                fabric: "Soft Bangalore Silk / Cotton",
-                blouse: "Included with Kantha Work",
+                name: "Sky Powder Blue Linen Silk Saree with Zari Border",
+                category: "Blue",
+                region: "Linen Silk Collection",
+                price: 1999,
+                originalPrice: 2999,
+                fabric: "Soft Premium Linen Silk",
+                blouse: "Included (Running Unstitched)",
                 image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800",
-                desc: "Entirely handcrafted by rural women artisans of Shantiniketan using traditional running stitch embroidery detailing floral and village life motifs."
+                desc: "Elegant Sky Powder Blue Linen Silk Saree with subtle metallic sheen, heavy golden pallu embroidery, and vibrant blue tassels."
             },
             {
                 id: 4,
-                name: "Pastel Mint Green Fulia Soft Linen Saree",
-                category: "Linen",
-                region: "Fulia, West Bengal",
-                price: 2799,
-                originalPrice: 3499,
-                fabric: "120 Count Pure Organic Linen",
-                blouse: "Included (Running Linen)",
-                image: "https://images.unsplash.com/photo-1610030469888-2996d9e03d3c?auto=format&fit=crop&q=80&w=800",
-                desc: "Breathable and airy soft linen saree in a delicate pastel mint green shade with fine metallic silver zari border, perfect for summer elegance."
-            },
-            {
-                id: 5,
-                name: "Deep Crimson Red Jamdani Silk Blend",
-                category: "Jamdani",
-                region: "Shantipur, West Bengal",
-                price: 3850,
-                originalPrice: 4500,
-                fabric: "Resham Silk Jamdani Thread",
-                blouse: "Included",
+                name: "Copper Rust Brown Linen Silk Saree with Zari Border",
+                category: "Brown",
+                region: "Linen Silk Collection",
+                price: 1999,
+                originalPrice: 2999,
+                fabric: "Soft Premium Linen Silk",
+                blouse: "Included (Running Unstitched)",
                 image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=800",
-                desc: "Vibrant festive crimson red saree crafted with contrast gold zari thread work in intricate traditional motif layouts."
-            },
-            {
-                id: 6,
-                name: "Handblocked Bihar Matka Tussar Silk",
-                category: "Silk",
-                region: "Bhagalpur, Bihar",
-                price: 5200,
-                originalPrice: 6200,
-                fabric: "Pure Matka Tussar Silk",
-                blouse: "Included",
-                image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800",
-                desc: "Rustic and elegant Matka Tussar saree with authentic wood-block floral printing and hand-twisted tassels on the pallu."
+                desc: "Rich Terracotta Copper Rust Brown Linen Silk Saree with warm gold zari border, detailed pallu artwork, and handcrafted red and gold tassels."
             }
         ];
 
@@ -1203,25 +1185,26 @@ HTML
             if (items.length === 0) {
                 grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
                     <i class="fa-solid fa-box-open" style="font-size: 2rem; margin-bottom: 12px;"></i>
-                    <p>No sarees found matching your search. Try adjusting filters!</p>
+                    <p>No sarees found matching your search.</p>
                 </div>`;
                 return;
             }
 
             grid.innerHTML = items.map(product => {
-                const waMessage = encodeURIComponent(`Hi Grace Of Women! I am interested in buying the *${product.name}* (Price: ₹${product.price.toLocaleString('en-IN')}). Please share more live photos/details.`);
+                const waMessage = encodeURIComponent(`Hi Grace Of Women! I am interested in buying the *${product.name}* (Price: ₹${product.price.toLocaleString('en-IN')}, Free Shipping). Please confirm availability.`);
                 
                 return `
                     <div class="product-card">
                         <span class="product-badge">${product.category}</span>
+                        <span class="shipping-badge"><i class="fa-solid fa-truck-fast"></i> Free Shipping</span>
                         <div class="product-img-wrapper" onclick="openModal(${product.id})">
                             <img src="${product.image}" alt="${product.name}" loading="lazy">
                         </div>
                         <div class="product-content">
-                            <div class="product-region"><i class="fa-solid fa-location-dot"></i> ${product.region}</div>
-                            <h4 class="product-title" onclick="openModal(${product.id})" style="cursor:pointer;">${product.name}</h4>
+                            <div class="product-region"><i class="fa-solid fa-sparkles"></i> ${product.region}</div>
+                            <h4 class="product-title" onclick="openModal(${product.id})">${product.name}</h4>
                             <div class="product-details">
-                                <span><i class="fa-solid fa-feather"></i> ${product.fabric.split(' ')[0]} ${product.fabric.split(' ')[1] || ''}</span>
+                                <span><i class="fa-solid fa-feather"></i> ${product.fabric}</span>
                             </div>
                             <div class="product-footer">
                                 <div class="product-price">
@@ -1261,7 +1244,7 @@ HTML
                 const matchesCat = activeCategory === 'all' || p.category === activeCategory;
                 const matchesQuery = p.name.toLowerCase().includes(query) || 
                                      p.fabric.toLowerCase().includes(query) || 
-                                     p.region.toLowerCase().includes(query);
+                                     p.category.toLowerCase().includes(query);
                 return matchesCat && matchesQuery;
             });
             renderProducts(filtered);
@@ -1278,10 +1261,10 @@ HTML
             document.getElementById('modalPrice').innerText = `₹${p.price.toLocaleString('en-IN')}`;
             document.getElementById('modalDesc').innerText = p.desc;
             document.getElementById('modalFabric').innerText = p.fabric;
-            document.getElementById('modalWeave').innerText = `${p.category} Handloom Work`;
+            document.getElementById('modalWeave').innerText = `Rich Zari Jacquard Weave`;
             document.getElementById('modalBlouse').innerText = p.blouse;
 
-            const waMsg = encodeURIComponent(`Hi Grace Of Women! I have a query about *${p.name}* (₹${p.price}).`);
+            const waMsg = encodeURIComponent(`Hi Grace Of Women! I have a query about *${p.name}* (₹${p.price}, Free Shipping).`);
             document.getElementById('modalWaBtn').href = `https://wa.me/917905691288?text=${waMsg}`;
             document.getElementById('modalAddCartBtn').onclick = () => { addToCart(p.id); closeModal(); };
 
@@ -1344,7 +1327,7 @@ HTML
                     <img src="${item.image}" class="cart-item-img" alt="${item.name}">
                     <div class="cart-item-info">
                         <div class="cart-item-title">${item.name}</div>
-                        <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+                        <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} (Free Shipping)</div>
                         <div class="cart-item-qty">
                             <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
                             <span>${item.qty}</span>
@@ -1371,7 +1354,7 @@ HTML
                 message += `${index + 1}. *${item.name}*\n   Qty: ${item.qty} x ₹${item.price.toLocaleString('en-IN')} = ₹${subtotal.toLocaleString('en-IN')}\n`;
             });
 
-            message += `\n*Total Amount:* ₹${total.toLocaleString('en-IN')}\n\nPlease confirm availability and payment options. Thank you!`;
+            message += `\n*Shipping:* FREE\n*Total Amount:* ₹${total.toLocaleString('en-IN')}\n\nPlease confirm availability and payment options. Thank you!`;
 
             const waUrl = `https://wa.me/917905691288?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank');
