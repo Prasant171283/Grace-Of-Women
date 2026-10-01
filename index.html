@@ -6,7 +6,7 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace Of Women | Pure Silk Linen Banarasi Border Sarees</title>
+    <title>Grace Of Women | Pure Silk Linen Banarasi Border Saree</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -289,24 +289,20 @@ HTML
 
         /* --- Catalog Section --- */
         .catalog-container {
-            max-width: 1280px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 60px 24px;
         }
 
         .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 20px;
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .section-title h3 {
             font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .section-title p {
@@ -314,336 +310,189 @@ HTML
             font-size: 0.95rem;
         }
 
-        /* Search & Filter Bar */
-        .filter-wrapper {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            width: 100%;
-            margin-bottom: 30px;
-            background: white;
-            padding: 16px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 240px;
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 10px 16px 10px 40px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            outline: none;
-            font-size: 0.9rem;
-            transition: border 0.2s;
-        }
-
-        .search-box input:focus {
-            border-color: var(--primary);
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-
-        .filter-tags {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 4px;
-        }
-
-        .tag-btn {
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--text-dark);
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-        }
-
-        .tag-btn:hover, .tag-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
-        }
-
-        .product-card {
+        /* Single Product Card Layout */
+        .single-product-wrapper {
             background: var(--surface);
             border-radius: var(--radius-md);
-            overflow: hidden;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .product-gallery {
             display: flex;
             flex-direction: column;
+            gap: 16px;
+        }
+
+        .main-img-box {
             position: relative;
+            width: 100%;
+            padding-top: 130%;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: #f5f5f5;
         }
 
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .product-badge {
+        .main-img-box img {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(4px);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 50px;
-            z-index: 2;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
         }
 
         .shipping-badge {
             position: absolute;
             top: 12px;
-            right: 12px;
+            left: 12px;
             background: var(--primary);
             color: white;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            padding: 4px 8px;
+            padding: 6px 12px;
             border-radius: 4px;
             z-index: 2;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .product-img-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 130%;
-            overflow: hidden;
-            background-color: #f0f0f0;
-            cursor: pointer;
-        }
-
-        .product-img-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .product-img-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .product-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-region {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--accent);
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .product-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .product-details {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+        .thumbnail-list {
             display: flex;
             gap: 12px;
         }
 
-        .product-footer {
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
+        .thumb-btn {
+            width: 65px;
+            height: 80px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #eee;
         }
 
-        .product-price {
+        .thumb-btn.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(44, 74, 62, 0.2);
+        }
+
+        .thumb-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info-box {
             display: flex;
             flex-direction: column;
         }
 
-        .price-current {
-            font-size: 1.25rem;
+        .info-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .info-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .info-price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info-price {
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
         }
 
-        .price-original {
-            font-size: 0.85rem;
+        .info-price-original {
+            font-size: 1rem;
             color: var(--text-muted);
             text-decoration: line-through;
         }
 
-        .card-actions {
-            display: flex;
-            gap: 8px;
+        .info-discount {
+            background: #E8F5E9;
+            color: #2E7D32;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
         }
 
-        .btn-card-wa {
-            background-color: #25D366;
-            color: white;
-            width: 38px;
-            height: 38px;
-            border-radius: var(--radius-sm);
+        /* Color Selector Options */
+        .color-selector-section {
+            margin-bottom: 24px;
+        }
+
+        .color-selector-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .color-selected-name {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .color-options-grid {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-chip {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.1rem;
+            gap: 8px;
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: var(--bg-light);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
             transition: all 0.2s ease;
         }
 
-        .btn-card-wa:hover {
-            background-color: #1EBE5D;
-            transform: scale(1.05);
+        .color-chip:hover {
+            border-color: var(--primary);
         }
 
-        .btn-add-cart {
-            background-color: var(--primary);
+        .color-chip.active {
+            border-color: var(--primary);
+            background: var(--primary);
             color: white;
-            border: none;
-            padding: 8px 14px;
-            border-radius: var(--radius-sm);
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
-        .btn-add-cart:hover {
-            background-color: var(--primary-light);
-        }
-
-        /* --- Quick View Modal --- */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            width: 100%;
-            max-width: 850px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            position: relative;
-            box-shadow: var(--shadow-lg);
-            animation: modalFade 0.3s ease;
-        }
-
-        @keyframes modalFade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: white;
-            border: none;
-            width: 32px;
-            height: 32px;
+        .color-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            cursor: pointer;
-            z-index: 5;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-img {
-            width: 100%;
-            height: 100%;
-            min-height: 400px;
-            object-fit: cover;
-        }
-
-        .modal-body {
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-title {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .modal-price {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-
-        .modal-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-            line-height: 1.6;
+            display: inline-block;
         }
 
         .spec-list {
@@ -656,8 +505,8 @@ HTML
         .spec-list li {
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
-            padding: 6px 0;
+            font-size: 0.88rem;
+            padding: 8px 0;
             border-bottom: 1px dashed var(--border);
         }
 
@@ -668,6 +517,12 @@ HTML
         .spec-list span:last-child {
             font-weight: 600;
             color: var(--text-dark);
+        }
+
+        .action-buttons-wrapper {
+            margin-top: auto;
+            display: flex;
+            gap: 12px;
         }
 
         /* --- Cart Drawer --- */
@@ -748,6 +603,13 @@ HTML
         .cart-item-title {
             font-weight: 600;
             font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .cart-item-color {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
             margin-bottom: 4px;
         }
 
@@ -904,7 +766,10 @@ HTML
             60% {transform: translateY(-3px);}
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 850px) {
+            .single-product-wrapper {
+                grid-template-columns: 1fr;
+            }
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -917,14 +782,6 @@ HTML
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-            .modal-content {
-                grid-template-columns: 1fr;
-                max-height: 90vh;
-                overflow-y: auto;
-            }
-            .modal-img {
-                min-height: 250px;
             }
         }
 
@@ -949,7 +806,7 @@ HTML
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        ✨ Free Shipping Across India on All Sarees | Direct WhatsApp Ordering Available
+        ✨ Free Shipping Across India | Direct WhatsApp Ordering Available
     </div>
 
     <!-- Navigation Header -->
@@ -975,20 +832,20 @@ HTML
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h2>Exquisite Pure Silk Linen Banarasi Border Sarees</h2>
-                <p>Discover our newly launched festive collection featuring Banarasi woven zari borders in rich Purple, Rose Pink, Sky Blue, and Copper Brown shades. Special price of ₹1,999 with Free Shipping across India!</p>
+                <h2>Exquisite Pure Silk Linen Banarasi Border Saree</h2>
+                <p>Handcrafted with rich Banarasi zari woven pallu and matching tassels. Choose your favorite shade from our 4 festive color options for ₹1,999 with Free Shipping across India!</p>
                 <div class="hero-buttons">
                     <a href="#catalog" class="btn-primary">
-                        Explore Collection <i class="fa-solid fa-arrow-right"></i>
+                        View Saree Details <i class="fa-solid fa-arrow-down"></i>
                     </a>
-                    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women,%20I'd%20like%20to%20order%20the%201999%20Pure%20Silk%20Linen%20Banarasi%20Border%20Saree%20Collection." target="_blank" class="btn-whatsapp">
+                    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women,%20I'd%20like%20to%20order%20the%20Pure%20Silk%20Linen%20Banarasi%20Border%20Saree." target="_blank" class="btn-whatsapp">
                         <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
             </div>
             <div class="hero-image-grid">
-                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" alt="Pure Silk Linen Banarasi Border Saree Purple" class="hero-img">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" alt="Pure Silk Linen Banarasi Border Saree Rose Pink" class="hero-img">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" id="heroImg1" alt="Saree Purple" class="hero-img">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" id="heroImg2" alt="Saree Rose Pink" class="hero-img">
             </div>
         </div>
     </section>
@@ -997,37 +854,72 @@ HTML
     <section class="story-section">
         <div class="story-container">
             <h3 class="story-title brand-font">Rooted in Heritage</h3>
-            <p class="story-text">Every Pure Silk Linen Banarasi Border Saree in our collection is created using traditional weaving techniques. Featuring rich Banarasi zari pallu artwork, detailed borders, and matching contrast tassel accents.</p>
+            <p class="story-text">Every Pure Silk Linen Banarasi Border Saree is woven using traditional artisan looms. Features opulent zari pallu motifs, fine textured drape, and handcrafted contrast tassels along the border.</p>
         </div>
     </section>
 
-    <!-- Catalog Section -->
+    <!-- Product Section -->
     <section class="catalog-container" id="catalog">
         <div class="section-header">
             <div class="section-title">
-                <h3>Pure Silk Linen Banarasi Border Collection (₹1,999)</h3>
-                <p>Pure Silk Linen • Traditional Banarasi Zari Border • Matching Tassels • Free Shipping</p>
+                <h3>Pure Silk Linen Banarasi Border Saree</h3>
+                <p>Select your preferred color variant below</p>
             </div>
         </div>
 
-        <!-- Search & Filter Bar -->
-        <div class="filter-wrapper">
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" placeholder="Search by color (e.g. Purple, Pink, Blue, Rust)..." onkeyup="filterProducts()">
+        <div class="single-product-wrapper">
+            <!-- Left: Gallery -->
+            <div class="product-gallery">
+                <div class="main-img-box">
+                    <span class="shipping-badge"><i class="fa-solid fa-truck-fast"></i> Free Shipping</span>
+                    <img id="mainProductImg" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800" alt="Pure Silk Linen Banarasi Border Saree">
+                </div>
+                <div class="thumbnail-list" id="thumbList">
+                    <!-- Thumbnails generated by JS -->
+                </div>
             </div>
-            <div class="filter-tags">
-                <button class="tag-btn active" onclick="filterCategory('all', this)">All Colors</button>
-                <button class="tag-btn" onclick="filterCategory('Purple', this)">Purple</button>
-                <button class="tag-btn" onclick="filterCategory('Pink', this)">Rose Pink</button>
-                <button class="tag-btn" onclick="filterCategory('Blue', this)">Sky Blue</button>
-                <button class="tag-btn" onclick="filterCategory('Brown', this)">Copper Brown</button>
-            </div>
-        </div>
 
-        <!-- Product Grid -->
-        <div class="product-grid" id="productGrid">
-            <!-- Products populated via JS -->
+            <!-- Right: Product Info & Color Options -->
+            <div class="product-info-box">
+                <div class="info-category"><i class="fa-solid fa-sparkles"></i> BANARASI BORDER COLLECTION</div>
+                <h2 class="info-title">Pure Silk Linen Banarasi Border Saree</h2>
+                
+                <div class="info-price-box">
+                    <span class="info-price">₹1,999</span>
+                    <span class="info-price-original">₹2,999</span>
+                    <span class="info-discount">33% OFF</span>
+                </div>
+
+                <!-- Color Options -->
+                <div class="color-selector-section">
+                    <div class="color-selector-title">
+                        <span>Select Color:</span>
+                        <span class="color-selected-name" id="selectedColorName">Royal Purple</span>
+                    </div>
+                    <div class="color-options-grid" id="colorChipsGrid">
+                        <!-- Color buttons generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Specs -->
+                <ul class="spec-list">
+                    <li><span>Fabric:</span> <span>Pure Silk Linen Blend</span></li>
+                    <li><span>Border & Pallu:</span> <span>Rich Banarasi Zari Weave</span></li>
+                    <li><span>Details:</span> <span>Matching Contrast Tassels</span></li>
+                    <li><span>Blouse Piece:</span> <span>Included (Unstitched Running)</span></li>
+                    <li><span>Shipping:</span> <span style="color: #25D366; font-weight:700;">FREE SHIPPING ACROSS INDIA</span></li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons-wrapper">
+                    <button class="btn-primary" style="flex: 1; justify-content: center;" onclick="addCurrentToBag()">
+                        <i class="fa-solid fa-bag-shopping"></i> Add to Bag
+                    </button>
+                    <a href="#" target="_blank" id="directWaBtn" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Order on WA
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1078,33 +970,6 @@ HTML
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Quick View Modal -->
-    <div class="modal" id="quickViewModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
-            <img src="" id="modalImg" class="modal-img" alt="Saree Image">
-            <div class="modal-body">
-                <span class="product-region" id="modalRegion">BANARASI BORDER COLLECTION</span>
-                <h3 class="modal-title" id="modalTitle">Saree Title</h3>
-                <div class="modal-price" id="modalPrice">₹1,999</div>
-                <p class="modal-desc" id="modalDesc">Detailed description...</p>
-                <ul class="spec-list">
-                    <li><span>Fabric:</span> <span id="modalFabric">Pure Silk Linen</span></li>
-                    <li><span>Border & Pallu:</span> <span id="modalWeave">Banarasi Zari Border & Rich Pallu</span></li>
-                    <li><span>Details:</span> <span>Matching Contrast Tassels</span></li>
-                    <li><span>Blouse Piece:</span> <span id="modalBlouse">Included (Running Unstitched)</span></li>
-                    <li><span>Shipping:</span> <span style="color: #25D366; font-weight:700;">FREE SHIPPING</span></li>
-                </ul>
-                <div style="display: flex; gap: 12px; margin-top: auto;">
-                    <button class="btn-primary" style="flex: 1;" id="modalAddCartBtn">Add to Bag</button>
-                    <a href="#" target="_blank" class="btn-whatsapp" id="modalWaBtn">
-                        <i class="fa-brands fa-whatsapp"></i> Ask on WA
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Cart Drawer & Overlay -->
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-drawer" id="cartDrawer">
@@ -1127,184 +992,107 @@ HTML
     </div>
 
     <script>
-        // Store Catalog Data (4 Color Variants of Pure Silk Linen Banarasi Border Saree at ₹1,999)
-        const products = [
-            {
-                id: 1,
-                name: "Royal Purple Pure Silk Linen Banarasi Border Saree",
-                category: "Purple",
-                region: "Banarasi Border Collection",
-                price: 1999,
-                originalPrice: 2999,
-                fabric: "Pure Silk Linen Blend",
-                blouse: "Included (Running Unstitched)",
-                image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800",
-                desc: "Stunning Royal Deep Purple Pure Silk Linen Saree woven with rich metallic Banarasi zari borders, elaborate floral pallu artwork, and handcrafted gold and purple fringe tassels."
-            },
-            {
-                id: 2,
-                name: "Rose Pink Pure Silk Linen Banarasi Border Saree",
-                category: "Pink",
-                region: "Banarasi Border Collection",
-                price: 1999,
-                originalPrice: 2999,
-                fabric: "Pure Silk Linen Blend",
-                blouse: "Included (Running Unstitched)",
-                image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800",
-                desc: "Graceful Crimson Rose Pink Pure Silk Linen Saree featuring antique gold Banarasi zari woven border and bright pink/gold contrast tassels along the pallu."
-            },
-            {
-                id: 3,
-                name: "Sky Powder Blue Pure Silk Linen Banarasi Border Saree",
-                category: "Blue",
-                region: "Banarasi Border Collection",
-                price: 1999,
-                originalPrice: 2999,
-                fabric: "Pure Silk Linen Blend",
-                blouse: "Included (Running Unstitched)",
-                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800",
-                desc: "Elegant Sky Powder Blue Pure Silk Linen Saree with rich metallic lustre, traditional Banarasi golden zari border, and vibrant blue tassels."
-            },
-            {
-                id: 4,
-                name: "Copper Rust Brown Pure Silk Linen Banarasi Border Saree",
-                category: "Brown",
-                region: "Banarasi Border Collection",
-                price: 1999,
-                originalPrice: 2999,
-                fabric: "Pure Silk Linen Blend",
-                blouse: "Included (Running Unstitched)",
-                image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=800",
-                desc: "Rich Terracotta Copper Rust Brown Pure Silk Linen Saree with opulent Banarasi zari border, detailed pallu work, and handcrafted red and gold tassels."
-            }
-        ];
+        // Single Saree with 4 Color Variants
+        const sareeData = {
+            title: "Pure Silk Linen Banarasi Border Saree",
+            price: 1999,
+            originalPrice: 2999,
+            colors: [
+                {
+                    name: "Royal Purple",
+                    hex: "#502868",
+                    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800"
+                },
+                {
+                    name: "Rose Pink",
+                    hex: "#C2185B",
+                    image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800"
+                },
+                {
+                    name: "Sky Powder Blue",
+                    hex: "#5C93C4",
+                    image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800"
+                },
+                {
+                    name: "Copper Rust Brown",
+                    hex: "#8D3C23",
+                    image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=800"
+                }
+            ]
+        };
 
+        let selectedColorIndex = 0;
         let cart = [];
-        let activeCategory = 'all';
 
-        // Render Products to Grid
-        function renderProducts(items) {
-            const grid = document.getElementById('productGrid');
-            if (items.length === 0) {
-                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
-                    <i class="fa-solid fa-box-open" style="font-size: 2rem; margin-bottom: 12px;"></i>
-                    <p>No sarees found matching your search.</p>
-                </div>`;
-                return;
-            }
+        function renderColorOptions() {
+            const chipsGrid = document.getElementById('colorChipsGrid');
+            const thumbList = document.getElementById('thumbList');
 
-            grid.innerHTML = items.map(product => {
-                const waMessage = encodeURIComponent(`Hi Grace Of Women! I am interested in buying the *${product.name}* (Price: ₹${product.price.toLocaleString('en-IN')}, Free Shipping). Please confirm availability.`);
-                
-                return `
-                    <div class="product-card">
-                        <span class="product-badge">${product.category}</span>
-                        <span class="shipping-badge"><i class="fa-solid fa-truck-fast"></i> Free Shipping</span>
-                        <div class="product-img-wrapper" onclick="openModal(${product.id})">
-                            <img src="${product.image}" alt="${product.name}" loading="lazy">
-                        </div>
-                        <div class="product-content">
-                            <div class="product-region"><i class="fa-solid fa-sparkles"></i> ${product.region}</div>
-                            <h4 class="product-title" onclick="openModal(${product.id})">${product.name}</h4>
-                            <div class="product-details">
-                                <span><i class="fa-solid fa-feather"></i> ${product.fabric}</span>
-                            </div>
-                            <div class="product-footer">
-                                <div class="product-price">
-                                    <span class="price-current">₹${product.price.toLocaleString('en-IN')}</span>
-                                    <span class="price-original">₹${product.originalPrice.toLocaleString('en-IN')}</span>
-                                </div>
-                                <div class="card-actions">
-                                    <a href="https://wa.me/917905691288?text=${waMessage}" target="_blank" class="btn-card-wa" title="Enquire on WhatsApp">
-                                        <i class="fa-brands fa-whatsapp"></i>
-                                    </a>
-                                    <button class="btn-add-cart" onclick="addToCart(${product.id})">
-                                        <i class="fa-solid fa-plus"></i> Bag
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            chipsGrid.innerHTML = sareeData.colors.map((color, index) => `
+                <div class="color-chip ${index === selectedColorIndex ? 'active' : ''}" onclick="selectColor(${index})">
+                    <span class="color-dot" style="background-color: ${color.hex}"></span>
+                    <span>${color.name}</span>
+                </div>
+            `).join('');
+
+            thumbList.innerHTML = sareeData.colors.map((color, index) => `
+                <div class="thumb-btn ${index === selectedColorIndex ? 'active' : ''}" onclick="selectColor(${index})">
+                    <img src="${color.image}" alt="${color.name}">
+                </div>
+            `).join('');
+
+            updateProductView();
         }
 
-        // Filter Logic
-        function filterCategory(cat, btn) {
-            activeCategory = cat;
-            document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            applyFilters();
+        function selectColor(index) {
+            selectedColorIndex = index;
+            renderColorOptions();
         }
 
-        function filterProducts() {
-            applyFilters();
+        function updateProductView() {
+            const currentColor = sareeData.colors[selectedColorIndex];
+            document.getElementById('mainProductImg').src = currentColor.image;
+            document.getElementById('selectedColorName').innerText = currentColor.name;
+
+            const waMsg = encodeURIComponent(`Hi Grace Of Women! I would like to order the *${sareeData.title}* in *${currentColor.name}* color (Price: ₹1,999, Free Shipping). Please confirm availability.`);
+            document.getElementById('directWaBtn').href = `https://wa.me/917905691288?text=${waMsg}`;
         }
 
-        function applyFilters() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = products.filter(p => {
-                const matchesCat = activeCategory === 'all' || p.category === activeCategory;
-                const matchesQuery = p.name.toLowerCase().includes(query) || 
-                                     p.fabric.toLowerCase().includes(query) || 
-                                     p.category.toLowerCase().includes(query);
-                return matchesCat && matchesQuery;
-            });
-            renderProducts(filtered);
-        }
-
-        // Quick View Modal Logic
-        function openModal(productId) {
-            const p = products.find(prod => prod.id === productId);
-            if (!p) return;
-
-            document.getElementById('modalImg').src = p.image;
-            document.getElementById('modalRegion').innerText = p.region;
-            document.getElementById('modalTitle').innerText = p.name;
-            document.getElementById('modalPrice').innerText = `₹${p.price.toLocaleString('en-IN')}`;
-            document.getElementById('modalDesc').innerText = p.desc;
-            document.getElementById('modalFabric').innerText = p.fabric;
-            document.getElementById('modalWeave').innerText = `Banarasi Zari Border & Pallu`;
-            document.getElementById('modalBlouse').innerText = p.blouse;
-
-            const waMsg = encodeURIComponent(`Hi Grace Of Women! I have a query about *${p.name}* (₹${p.price}, Free Shipping).`);
-            document.getElementById('modalWaBtn').href = `https://wa.me/917905691288?text=${waMsg}`;
-            document.getElementById('modalAddCartBtn').onclick = () => { addToCart(p.id); closeModal(); };
-
-            document.getElementById('quickViewModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('quickViewModal').classList.remove('active');
-        }
-
-        // Cart Drawer Logic
-        function toggleCart() {
-            document.getElementById('cartDrawer').classList.toggle('open');
-            document.getElementById('cartOverlay').classList.toggle('open');
-        }
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const existing = cart.find(item => item.id === productId);
-
+        function addCurrentToBag() {
+            const color = sareeData.colors[selectedColorIndex];
+            const itemKey = `${sareeData.title} (${color.name})`;
+            
+            const existing = cart.find(item => item.key === itemKey);
             if (existing) {
                 existing.qty += 1;
             } else {
-                cart.push({ ...product, qty: 1 });
+                cart.push({
+                    key: itemKey,
+                    title: sareeData.title,
+                    colorName: color.name,
+                    price: sareeData.price,
+                    image: color.image,
+                    qty: 1
+                });
             }
 
             updateCartUI();
             toggleCart();
         }
 
-        function updateQty(id, change) {
-            const item = cart.find(i => i.id === id);
+        // Cart Drawer Functions
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('open');
+            document.getElementById('cartOverlay').classList.toggle('open');
+        }
+
+        function updateQty(key, change) {
+            const item = cart.find(i => i.key === key);
             if (!item) return;
 
             item.qty += change;
             if (item.qty <= 0) {
-                cart = cart.filter(i => i.id !== id);
+                cart = cart.filter(i => i.key !== key);
             }
             updateCartUI();
         }
@@ -1327,44 +1115,44 @@ HTML
 
             itemsContainer.innerHTML = cart.map(item => `
                 <div class="cart-item">
-                    <img src="${item.image}" class="cart-item-img" alt="${item.name}">
+                    <img src="${item.image}" class="cart-item-img" alt="${item.title}">
                     <div class="cart-item-info">
-                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-title">${item.title}</div>
+                        <div class="cart-item-color">Color: ${item.colorName}</div>
                         <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} (Free Shipping)</div>
                         <div class="cart-item-qty">
-                            <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                            <button class="qty-btn" onclick="updateQty('${item.key}', -1)">-</button>
                             <span>${item.qty}</span>
-                            <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                            <button class="qty-btn" onclick="updateQty('${item.key}', 1)">+</button>
                         </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        // Checkout via WhatsApp
         function checkoutWhatsApp() {
             if (cart.length === 0) {
-                alert("Your bag is empty! Add some sarees first.");
+                alert("Your bag is empty!");
                 return;
             }
 
-            let message = "Hello Grace Of Women! I would like to place an order for the following sarees:\n\n";
+            let message = "Hello Grace Of Women! I would like to place an order for:\n\n";
             let total = 0;
 
             cart.forEach((item, index) => {
                 const subtotal = item.price * item.qty;
                 total += subtotal;
-                message += `${index + 1}. *${item.name}*\n   Qty: ${item.qty} x ₹${item.price.toLocaleString('en-IN')} = ₹${subtotal.toLocaleString('en-IN')}\n`;
+                message += `${index + 1}. *${item.title}*\n   Color: *${item.colorName}*\n   Qty: ${item.qty} x ₹${item.price.toLocaleString('en-IN')} = ₹${subtotal.toLocaleString('en-IN')}\n\n`;
             });
 
-            message += `\n*Shipping:* FREE\n*Total Amount:* ₹${total.toLocaleString('en-IN')}\n\nPlease confirm availability and payment options. Thank you!`;
+            message += `*Shipping:* FREE\n*Total Amount:* ₹${total.toLocaleString('en-IN')}\n\nPlease confirm payment details and availability. Thank you!`;
 
             const waUrl = `https://wa.me/917905691288?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank');
         }
 
-        // Initial Initialization
-        renderProducts(products);
+        // Initialize
+        renderColorOptions();
     </script>
 </body>
 </html>
