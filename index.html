@@ -1,1120 +1,1384 @@
+HTML
+
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace Of Women | Authentic Bengal & Bihar Handloom Sarees</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display for Serifs & Inter for Body -->
+    <title>Grace Of Women | Handloom Sarees</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'grace-cream': '#FAF7F2',
-                        'grace-beige': '#F3ECE1',
-                        'grace-sage': '#8A9A86',
-                        'grace-sage-light': '#E9EFE9',
-                        'grace-blush': '#E8D3CD',
-                        'grace-terracotta': '#A35C4A',
-                        'grace-charcoal': '#2C2B29',
-                        'grace-gold': '#D4AF37',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        /* Custom scrollbars and refined transitions */
-        ::-webkit-scrollbar {
+        :root {
+            --primary: #2C4A3E;       /* Deep Forest Green */
+            --primary-light: #4A6E5F;
+            --accent: #C88D74;        /* Soft Terracotta / Rose Blush */
+            --accent-hover: #B2755C;
+            --bg-light: #FAF8F5;      /* Warm Cream */
+            --surface: #FFFFFF;
+            --text-dark: #232B28;
+            --text-muted: #6B7280;
+            --border: #E5E0D8;
+            --shadow-sm: 0 2px 8px rgba(44, 74, 62, 0.05);
+            --shadow-md: 0 8px 24px rgba(44, 74, 62, 0.08);
+            --shadow-lg: 0 16px 32px rgba(44, 74, 62, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* --- Announcement Bar --- */
+        .announcement-bar {
+            background-color: var(--primary);
+            color: #FAF8F5;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        /* --- Navigation --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .header-badge::before {
+            content: '';
             width: 6px;
             height: 6px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
         }
-        ::-webkit-scrollbar-track {
-            background: #FAF7F2;
+
+        .brand-logo {
+            text-decoration: none;
+            text-align: center;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #8A9A86;
-            border-radius: 9999px;
+
+        .brand-logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1;
         }
-        .backdrop-blur-custom {
-            backdrop-filter: blur(8px);
+
+        .brand-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.25rem;
+            cursor: pointer;
+            position: relative;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .icon-btn:hover {
+            background-color: rgba(44, 74, 62, 0.05);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background-color: var(--accent);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- Hero Banner --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #FAF8F5 0%, #EFE9DF 100%);
+            padding: 60px 24px;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1EBE5D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .hero-image-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-img:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        /* --- Story Banner --- */
+        .story-section {
+            background-color: #FAF6F0;
+            padding: 40px 24px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .story-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* --- Catalog Section --- */
+        .catalog-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section-title h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Search & Filter Bar */
+        .filter-wrapper {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 30px;
+            background: white;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 240px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            outline: none;
+            font-size: 0.9rem;
+            transition: border 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tag-btn {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tag-btn:hover, .tag-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 130%; /* Aspect ratio */
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .product-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-region {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .product-details {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .product-details span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .product-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .product-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-current {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-original {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-card-wa {
+            background-color: #25D366;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-card-wa:hover {
+            background-color: #1EBE5D;
+            transform: scale(1.05);
+        }
+
+        .btn-add-cart {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* --- Quick View Modal --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 850px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            animation: modalFade 0.3s ease;
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 5;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .modal-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .modal-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .spec-list {
+            list-style: none;
+            margin-bottom: 24px;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .spec-list span:first-child {
+            color: var(--text-muted);
+        }
+
+        .spec-list span:last-child {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* --- Cart Drawer --- */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: white;
+            z-index: 300;
+            box-shadow: var(--shadow-lg);
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 299;
+        }
+
+        .cart-overlay.open {
+            display: block;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-header h4 {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .qty-btn {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-light);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary);
+            color: #FAF8F5;
+            padding: 60px 24px 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h4 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: #FAF8F5;
+        }
+
+        .footer-about p {
+            color: #C5D1CB;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            max-width: 320px;
+        }
+
+        .footer-links h5 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--accent);
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #C5D1CB;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            color: #92A59C;
+        }
+
+        /* --- Floating WhatsApp Button --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25D366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 90;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 34px;
+            right: 90px;
+            background: white;
+            color: var(--text-dark);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-6px);}
+            60% {transform: translateY(-3px);}
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin: 0 auto 30px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .modal-content {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            .modal-img {
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .header-badge {
+                align-self: flex-start;
+            }
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="bg-grace-cream text-grace-charcoal font-sans antialiased selection:bg-grace-sage selection:text-white">
+<body>
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-grace-sage text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide flex justify-between items-center max-w-full overflow-hidden">
-        <div class="hidden md:block w-1/4"></div>
-        <div class="w-full md:w-2/4 flex justify-center items-center gap-2">
-            <span>✨ Direct Weavers to Doorstep | Free Shipping Across India</span>
-            <span class="hidden sm:inline">| Silk Mark Certified Handlooms</span>
-        </div>
-        <div class="hidden md:flex w-1/4 justify-end gap-3 text-xs pr-4">
-            <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women%2C%20I%20want%20to%20book%20a%20live%20video%20call%20to%20see%20sarees." target="_blank" class="hover:underline flex items-center gap-1">
-                <i class="fa-brands font-semibold fa-whatsapp text-emerald-300"></i> Book Video Call
-            </a>
-        </div>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        ✨ Free Shipping Across India on Orders Above ₹2,999 | Direct WhatsApp Ordering Available
     </div>
 
-    <!-- Sticky Navigation Header -->
-    <header class="sticky top-0 z-40 bg-grace-cream/90 backdrop-blur-custom border-b border-grace-beige/60 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-grace-charcoal hover:text-grace-sage focus:outline-none" aria-label="Open Menu">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-
-                <!-- Brand Logo -->
-                <div class="flex-1 md:flex-none text-center md:text-left">
-                    <a href="#" class="inline-block">
-                        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-grace-charcoal">Grace Of Women</span>
-                        <span class="block text-[10px] tracking-[0.25em] text-grace-terracotta uppercase font-medium -mt-1">Roots of Bengal & Bihar</span>
-                    </a>
-                </div>
-
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-grace-charcoal">
-                    <a href="#collections" class="hover:text-grace-terracotta transition-colors py-1">Collections</a>
-                    <a href="#roots-heritage" class="hover:text-grace-terracotta transition-colors py-1">Roots & Heritage</a>
-                    <a href="#why-us" class="hover:text-grace-terracotta transition-colors py-1">Why Us</a>
-                    <a href="#testimonials" class="hover:text-grace-terracotta transition-colors py-1">Reviews</a>
-                    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women%2C%20I%20have%20an%20inquiry%20regarding%20handloom%20sarees." target="_blank" class="text-emerald-700 hover:text-emerald-800 transition-colors py-1 flex items-center gap-1 font-semibold">
-                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Help
-                    </a>
-                </nav>
-
-                <!-- Header Action Icons -->
-                <div class="flex items-center space-x-4 sm:space-x-6">
-                    <!-- Search Input Trigger / Box -->
-                    <div class="relative hidden sm:block">
-                        <input type="text" id="search-input" placeholder="Search Jamdani, Tussar..." class="bg-white border border-grace-beige rounded-full py-1.5 pl-9 pr-4 text-xs w-44 lg:w-56 focus:outline-none focus:border-grace-sage transition-all">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-grace-charcoal/50 text-xs"></i>
-                    </div>
-
-                    <!-- Cart Trigger Button -->
-                    <button id="open-cart-btn" class="relative p-2 text-grace-charcoal hover:text-grace-terracotta transition-colors focus:outline-none" aria-label="Open Shopping Cart">
-                        <i class="fa-solid fa-bag-shopping text-xl"></i>
-                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-grace-terracotta text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-grace-cream hidden">0</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Drawer Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden bg-grace-cream border-b border-grace-beige px-4 pt-2 pb-6 space-y-3">
-            <div class="pt-2 pb-1">
-                <input type="text" id="mobile-search-input" placeholder="Search Tussar, Kantha, Jamdani..." class="w-full bg-white border border-grace-beige rounded-full py-2 pl-9 pr-4 text-xs focus:outline-none focus:border-grace-sage">
-            </div>
-            <a href="#collections" class="mobile-nav-link block text-base font-medium text-grace-charcoal py-2 border-b border-grace-beige/50">Our Collections</a>
-            <a href="#roots-heritage" class="mobile-nav-link block text-base font-medium text-grace-charcoal py-2 border-b border-grace-beige/50">Hanlooms Love By Pratibha</a>
-            <a href="#why-us" class="mobile-nav-link block text-base font-medium text-grace-charcoal py-2 border-b border-grace-beige/50">Why Choose Us</a>
-            <a href="#testimonials" class="mobile-nav-link block text-base font-medium text-grace-charcoal py-2 border-b border-grace-beige/50">Customer Stories</a>
-            <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women%2C%20I%20want%20to%20view%20your%20saree%20catalog." target="_blank" class="block text-base font-semibold text-emerald-700 py-2 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Direct Chat on WhatsApp
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <div class="header-badge">Handlooms Love By Pratibha</div>
+            
+            <a href="#" class="brand-logo">
+                <h1>GRACE OF WOMEN</h1>
+                <div class="brand-tagline">Authentic Ethnic Handlooms</div>
             </a>
+
+            <div class="header-actions">
+                <button class="icon-btn" onclick="toggleCart()" title="View Bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Banner Section -->
-    <section class="relative bg-grace-beige/40 overflow-hidden py-12 lg:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Content -->
-                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-grace-sage/15 text-grace-terracotta text-xs font-semibold tracking-wider uppercase">
-                        <i class="fa-solid fa-gem text-xs"></i> 100% Authentic Handloom Masterpieces
-                    </div>
-                    <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight text-grace-charcoal">
-                        Ethereal Grace from the <span class="italic font-serif text-grace-terracotta">Roots of Bengal & Bihar</span>
-                    </h1>
-                    <p class="text-grace-charcoal/80 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Handcrafted with passion by master artisans in Fulia, Bhagalpur, and Murshidabad. Discover breathable Dhakai Jamdanis, regal Bhagalpuri Silks, intricate Kantha embroidery, and lightweight Tussar Ghicha sarees.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#collections" class="w-full sm:w-auto px-8 py-3.5 bg-grace-terracotta text-white font-medium text-sm rounded-lg shadow-md hover:bg-grace-terracotta/90 transition-all text-center">
-                            Explore Collections
-                        </a>
-                        <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women%2C%20I%20am%20looking%20for%20handloom%20sarees%20and%20need%20assistance." target="_blank" class="w-full sm:w-auto px-6 py-3.5 bg-emerald-700 text-white font-medium text-sm rounded-lg shadow-md hover:bg-emerald-800 transition-all flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Order via WhatsApp
-                        </a>
-                    </div>
-
-                    <!-- Trust Stats -->
-                    <div class="pt-6 border-t border-grace-beige grid grid-cols-3 gap-4 text-center lg:text-left">
-                        <div>
-                            <span class="block font-serif text-xl sm:text-2xl font-bold text-grace-charcoal">350+</span>
-                            <span class="text-xs text-grace-charcoal/70">Artisan Weavers</span>
-                        </div>
-                        <div>
-                            <span class="block font-serif text-xl sm:text-2xl font-bold text-grace-charcoal">100%</span>
-                            <span class="text-xs text-grace-charcoal/70">Pure Silk & Cotton</span>
-                        </div>
-                        <div>
-                            <span class="block font-serif text-xl sm:text-2xl font-bold text-grace-charcoal">4.9 ★</span>
-                            <span class="text-xs text-grace-charcoal/70">WhatsApp Orders</span>
-                        </div>
-                    </div>
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>Weaving Timeless Stories from Bengal & Bihar</h2>
+                <p>Discover handcrafted Jamdanis, Bhagalpuri Silks, Kantha Embroidery, and Fulia Linens—woven directly at the looms of master artisans.</p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn-primary">
+                        Explore Collection <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women,%20I'd%20like%20to%20view%20your%20latest%20handloom%20saree%20catalog." target="_blank" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
                 </div>
-
-                <!-- Right Hero Image Grid -->
-                <div class="lg:col-span-6 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none grid grid-cols-2 gap-4">
-                        <div class="space-y-4">
-                            <div class="relative rounded-2xl overflow-hidden shadow-lg group">
-                                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80" alt="Pure Bengal Handloom Jamdani Saree" class="w-full h-64 sm:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x800/E8D3CD/2C2B29?text=Handloom+Saree'">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
-                                    <span class="text-white font-serif text-sm italic">Soft Dhakai Jamdani</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space-y-4 pt-8">
-                            <div class="relative rounded-2xl overflow-hidden shadow-lg group">
-                                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80" alt="Bhagalpuri Silk Tussar Saree" class="w-full h-64 sm:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x800/8A9A86/ffffff?text=Bhagalpuri+Silk'">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
-                                    <span class="text-white font-serif text-sm italic">Bhagalpuri Tussar</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Badge Overlay -->
-                    <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-4 bg-white/95 backdrop-blur-sm p-3.5 rounded-xl shadow-xl border border-grace-beige flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-grace-charcoal">Silk Mark Certified</p>
-                            <p class="text-[11px] text-grace-charcoal/70">Guaranteed Pure Craftsmanship</p>
-                        </div>
-                    </div>
-                </div>
-
+            </div>
+            <div class="hero-image-grid">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" alt="Dhakai Jamdani Saree" class="hero-img">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" alt="Bhagalpuri Tussar Silk Saree" class="hero-img">
             </div>
         </div>
     </section>
 
-    <!-- Main Catalog Section -->
-    <section id="collections" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Section Header -->
-        <div class="text-center max-w-2xl mx-auto mb-10">
-            <span class="text-grace-terracotta text-xs font-semibold tracking-widest uppercase">Handwoven Collections</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-normal text-grace-charcoal mt-1">Explore Rooted Weaves</h2>
-            <div class="w-16 h-0.5 bg-grace-terracotta mx-auto mt-3"></div>
-            <p class="text-xs sm:text-sm text-grace-charcoal/70 mt-3">Directly woven by skilled artisan clusters of Bengal and Bihar. Choose your favorite weave or ask for live video previews on WhatsApp!</p>
+    <!-- Story Banner -->
+    <section class="story-section">
+        <div class="story-container">
+            <h3 class="story-title brand-font">Rooted in Heritage</h3>
+            <p class="story-text">Every saree in our collection is created using traditional handloom techniques passed down through generations of weavers in Fulia, Shantipur, Bhagalpur, and Bolpur. No machines, no mass production—just pure craft and elegance.</p>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-container" id="catalog">
+        <div class="section-header">
+            <div class="section-title">
+                <h3>Our Curated Weaves</h3>
+                <p>Pure Handloom • Certified Quality • Direct Weaver Sourcing</p>
+            </div>
         </div>
 
-        <!-- Filter Pills Bar -->
-        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar scroll-smooth">
-            <button class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap bg-grace-terracotta text-white shadow-sm" data-category="all">
-                All Weaves
-            </button>
-            <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap bg-white text-grace-charcoal border border-grace-beige hover:border-grace-sage" data-category="bengal-jamdani">
-                Bengal Jamdani
-            </button>
-            <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap bg-white text-grace-charcoal border border-grace-beige hover:border-grace-sage" data-category="bhagalpuri-silk">
-                Bhagalpuri Tussar
-            </button>
-            <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap bg-white text-grace-charcoal border border-grace-beige hover:border-grace-sage" data-category="kantha-stitch">
-                Kantha Embroidery
-            </button>
-            <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap bg-white text-grace-charcoal border border-grace-beige hover:border-grace-sage" data-category="taant-linen">
-                Taant & Soft Linen
-            </button>
-            <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap bg-white text-grace-charcoal border border-grace-beige hover:border-grace-sage" data-category="tussar-ghicha">
-                Tussar Ghicha
-            </button>
+        <!-- Search & Filter Bar -->
+        <div class="filter-wrapper">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search by weave, fabric, or region (e.g. Jamdani, Silk)..." onkeyup="filterProducts()">
+            </div>
+            <div class="filter-tags">
+                <button class="tag-btn active" onclick="filterCategory('all', this)">All Weaves</button>
+                <button class="tag-btn" onclick="filterCategory('Jamdani', this)">Dhakai Jamdani</button>
+                <button class="tag-btn" onclick="filterCategory('Silk', this)">Bhagalpuri Silk</button>
+                <button class="tag-btn" onclick="filterCategory('Kantha', this)">Kantha Stitch</button>
+                <button class="tag-btn" onclick="filterCategory('Linen', this)">Fulia Linen</button>
+            </div>
         </div>
 
         <!-- Product Grid -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-            <!-- Dynamic products rendered via JS -->
-        </div>
-
-        <!-- Empty State (hidden by default) -->
-        <div id="no-products" class="hidden text-center py-12">
-            <i class="fa-solid fa-box-open text-4xl text-grace-charcoal/30 mb-3"></i>
-            <p class="text-grace-charcoal/70 text-sm">No sarees match your search or filter choice.</p>
-            <button id="reset-filter-btn" class="mt-3 text-xs text-grace-terracotta font-semibold underline">Reset Filters</button>
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be dynamically populated via JavaScript -->
         </div>
     </section>
 
-    <!-- Roots & Heritage Story Section -->
-    <section id="roots-heritage" class="py-16 bg-grace-beige/50 border-y border-grace-beige">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="relative rounded-2xl overflow-hidden shadow-md">
-                    <img src="https://images.unsplash.com/photo-1606760227091-3dd850d492a6?auto=format&fit=crop&w=1000&q=80" alt="Weaver on traditional handloom" class="w-full h-80 sm:h-96 object-cover" onerror="this.src='https://placehold.co/800x600/FAF7F2/2C2B29?text=Artisan+Weaver'">
-                    <div class="absolute inset-0 bg-grace-charcoal/20"></div>
-                    <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-xl text-xs text-grace-charcoal">
-                        <p class="font-serif italic font-medium text-sm text-grace-terracotta">"Every warp and weft holds the song of our ancestors."</p>
-                        <p class="mt-1 font-semibold">— Master Artisan, Fulia Cluster (West Bengal)</p>
-                    </div>
-                </div>
-
-                <div class="space-y-5">
-                    <span class="text-grace-terracotta text-xs font-semibold tracking-widest uppercase">Direct Weaver Connection</span>
-                    <h2 class="font-serif text-3xl font-normal text-grace-charcoal">Preserving India’s Purest Handloom Heritage</h2>
-                    <p class="text-grace-charcoal/80 text-sm leading-relaxed">
-                        At <strong class="text-grace-charcoal font-semibold">Grace Of Women</strong>, we take immense pride in bringing you sarees directly from the loom hubs of Bengal and Bihar. We cut out unnecessary middlemen so that our weavers earn fair, dignified wages while you receive authentic handlooms at honest prices.
-                    </p>
-                    
-                    <div class="space-y-3 pt-2">
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full bg-grace-sage/20 text-grace-sage flex items-center justify-center shrink-0 mt-0.5">
-                                <i class="fa-solid fa-seedling text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-grace-charcoal">Fulia & Nadia (Bengal)</h4>
-                                <p class="text-xs text-grace-charcoal/70">Renowned for feather-light Cotton Jamdanis, soft Tangail weaves, and intricate motifs.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full bg-grace-sage/20 text-grace-sage flex items-center justify-center shrink-0 mt-0.5">
-                                <i class="fa-solid fa-feather-pointed text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-grace-charcoal">Bhagalpur & Banka (Bihar)</h4>
-                                <p class="text-xs text-grace-charcoal/70">The world-famous Silk City of India, known for natural organic Tussar, Ghicha, and Katia silks.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-full bg-grace-sage/20 text-grace-sage flex items-center justify-center shrink-0 mt-0.5">
-                                <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-grace-charcoal">Bolpur & Murshidabad</h4>
-                                <p class="text-xs text-grace-charcoal/70">Famous for hand-stitched Kantha embroidery and raw Mulberry silk sarees.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-4">
-                        <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women%2C%20I%20would%20like%20to%20know%20more%20about%20your%20weaver%20clusters." target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-grace-terracotta hover:underline">
-                            Connect with us on WhatsApp for custom loom orders <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h4>GRACE OF WOMEN</h4>
+                <p>Bringing authentic, traditional handloom sarees from the artisan roots of Bengal & Bihar straight to your doorstep.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Our Weaves</h5>
+                <ul>
+                    <li><a href="#catalog">Dhakai Jamdani</a></li>
+                    <li><a href="#catalog">Bhagalpuri Tussar Silk</a></li>
+                    <li><a href="#catalog">Bolpur Kantha Stitch</a></li>
+                    <li><a href="#catalog">Fulia Handcrafted Linen</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Customer Support</h5>
+                <ul>
+                    <li><a href="https://wa.me/917905691288" target="_blank">WhatsApp Support</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Handloom Care Guide</a></li>
+                    <li><a href="#">Authenticity Guarantee</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Connect With Us</h5>
+                <ul>
+                    <li><a href="https://wa.me/917905691288" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 7905691288</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @graceofwomen.store</a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i> contact@graceofwomen.in</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="why-us" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-xl mx-auto mb-12">
-            <span class="text-grace-terracotta text-xs font-semibold tracking-widest uppercase">The Grace Experience</span>
-            <h2 class="font-serif text-3xl font-normal text-grace-charcoal mt-1">Why Women Love Shopping With Us</h2>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-2xl border border-grace-beige text-center space-y-3 shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 rounded-full bg-grace-blush/40 text-grace-terracotta flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-solid fa-video"></i>
-                </div>
-                <h3 class="font-serif text-lg font-semibold text-grace-charcoal">Live Video Shopping</h3>
-                <p class="text-xs text-grace-charcoal/70 leading-relaxed">Unsure about colors? Connect with us on WhatsApp video call to see live drape and texture before buying.</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl border border-grace-beige text-center space-y-3 shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 rounded-full bg-grace-sage-light text-grace-sage flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-solid fa-[#008080] fa-certificate"></i>
-                </div>
-                <h3 class="font-serif text-lg font-semibold text-grace-charcoal">Silk Mark Certified</h3>
-                <p class="text-xs text-grace-charcoal/70 leading-relaxed">Guaranteed 100% natural pure silk and organic cotton handlooms directly from registered loom hubs.</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl border border-grace-beige text-center space-y-3 shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-solid fa-truck-fast"></i>
-                </div>
-                <h3 class="font-serif text-lg font-semibold text-grace-charcoal">Express Shipping</h3>
-                <p class="text-xs text-grace-charcoal/70 leading-relaxed">Free insured delivery across India. International door-step shipping available on WhatsApp request.</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl border border-grace-beige text-center space-y-3 shadow-sm hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </div>
-                <h3 class="font-serif text-lg font-semibold text-grace-charcoal">Instant WhatsApp Checkout</h3>
-                <p class="text-xs text-grace-charcoal/70 leading-relaxed">Simple 1-click ordering via WhatsApp. No complex registration or passwords required!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-grace-sage/10 border-t border-grace-beige">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <span class="text-grace-terracotta text-xs font-semibold tracking-widest uppercase">Heartfelt Words</span>
-                <h2 class="font-serif text-3xl font-normal text-grace-charcoal">Loved By Saree Connoisseurs</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-grace-beige/80 shadow-sm relative flex flex-col justify-between">
-                    <div>
-                        <div class="text-amber-400 text-xs mb-3">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-xs sm:text-sm text-grace-charcoal/80 italic leading-relaxed">
-                            "I ordered a Bhagalpuri Tussar saree for my sister's wedding function. The fabric softness and sheen are breathtaking. Loved the WhatsApp live video call option before finalizing!"
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-grace-beige flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-grace-blush flex items-center justify-center text-grace-terracotta font-bold text-xs">
-                            SG
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-grace-charcoal">Shalini Gupta</p>
-                            <p class="text-[11px] text-grace-charcoal/60">New Delhi (Verified Buyer)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-grace-beige/80 shadow-sm relative flex flex-col justify-between">
-                    <div>
-                        <div class="text-amber-400 text-xs mb-3">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-xs sm:text-sm text-grace-charcoal/80 italic leading-relaxed">
-                            "Being from Bengal, I am extremely particular about my Jamdanis. Grace Of Women's Fulia collection is 100% authentic handloom. Pure cotton, lightweight, and so regal!"
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-grace-beige flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-grace-sage-light flex items-center justify-center text-grace-sage font-bold text-xs">
-                            MB
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-grace-charcoal">Mousumi Banerjee</p>
-                            <p class="text-[11px] text-grace-charcoal/60">Kolkata (Verified Buyer)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-grace-beige/80 shadow-sm relative flex flex-col justify-between">
-                    <div>
-                        <div class="text-amber-400 text-xs mb-3">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-xs sm:text-sm text-grace-charcoal/80 italic leading-relaxed">
-                            "Extremely prompt WhatsApp support! I wanted custom tassel finish on my Kantha stitch saree and they delivered it perfectly within 4 days."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-grace-beige flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 font-bold text-xs">
-                            PR
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-grace-charcoal">Priya Roy</p>
-                            <p class="text-[11px] text-grace-charcoal/60">Bengaluru (Verified Buyer)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shopping Cart Slide-out Drawer Overlay -->
-    <div id="cart-drawer-backdrop" class="fixed inset-0 bg-black/50 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-grace-cream z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-        <!-- Cart Header -->
-        <div class="p-4 border-b border-grace-beige flex items-center justify-between bg-white">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-bag-shopping text-grace-terracotta"></i>
-                <h3 class="font-serif font-bold text-grace-charcoal">Your Shopping Bag</h3>
-                <span id="cart-count-title" class="text-xs bg-grace-beige px-2 py-0.5 rounded-full text-grace-charcoal font-medium">(0)</span>
-            </div>
-            <button id="close-cart-btn" class="p-1 text-grace-charcoal hover:text-grace-terracotta text-lg" aria-label="Close Cart">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <!-- Cart Items List Container -->
-        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-4">
-            <!-- Dynamic Cart Items Rendered Here -->
-        </div>
-
-        <!-- Cart Footer / Summary -->
-        <div class="p-4 bg-white border-t border-grace-beige space-y-3">
-            <!-- Promo Code Input -->
-            <div class="flex gap-2">
-                <input type="text" id="coupon-input" placeholder="Coupon Code (e.g. GRACE10)" class="flex-1 uppercase bg-grace-cream border border-grace-beige rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-grace-terracotta">
-                <button id="apply-coupon-btn" class="bg-grace-charcoal text-white text-xs px-3 py-1.5 rounded-lg hover:bg-black transition-colors">Apply</button>
-            </div>
-            <p id="coupon-message" class="text-[11px] hidden font-medium"></p>
-
-            <div class="space-y-1.5 text-xs text-grace-charcoal/80 pt-2 border-t border-grace-beige">
-                <div class="flex justify-between">
-                    <span>Subtotal</span>
-                    <span id="cart-subtotal">₹0</span>
-                </div>
-                <div class="flex justify-between text-emerald-700">
-                    <span>Discount</span>
-                    <span id="cart-discount">-₹0</span>
-                </div>
-                <div class="flex justify-between">
-                    <span>Shipping Across India</span>
-                    <span class="text-emerald-700 font-semibold">FREE</span>
-                </div>
-                <div class="flex justify-between font-serif text-base font-bold text-grace-charcoal pt-2 border-t border-grace-beige">
-                    <span>Total Amount</span>
-                    <span id="cart-total" class="text-grace-terracotta">₹0</span>
-                </div>
-            </div>
-
-            <!-- WhatsApp Checkout Button -->
-            <button id="whatsapp-checkout-btn" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-3 rounded-lg flex items-center justify-center gap-2 shadow-md transition-all text-xs sm:text-sm">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Complete Order on WhatsApp
-            </button>
-
-            <p class="text-[10px] text-center text-grace-charcoal/60">
-                <i class="fa-solid fa-shield-halved text-emerald-600"></i> Cash on Delivery (COD) & Online UPI options available on WhatsApp.
-            </p>
-        </div>
-    </div>
-
-    <!-- Product Quick View Modal -->
-    <div id="quickview-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 border border-grace-beige">
-            <button id="close-quickview-btn" class="absolute top-4 right-4 text-grace-charcoal hover:text-grace-terracotta text-xl z-10 w-8 h-8 rounded-full bg-grace-cream flex items-center justify-center">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div id="quickview-content" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Modal content dynamically injected -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp Assistant Button -->
-    <div class="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2">
-        <div id="wa-tooltip" class="bg-white px-3 py-1.5 rounded-lg shadow-lg border border-grace-beige text-xs text-grace-charcoal flex items-center gap-2 animate-bounce">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Need help choosing a saree? <strong>Chat with us!</strong></span>
-        </div>
-        <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women%2C%20I%20am%20visiting%20your%20website%20and%20need%20assistance%20with%20handloom%20sarees." target="_blank" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-all text-2xl group relative" aria-label="WhatsApp Live Assistant">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span class="absolute right-0 top-0 -mr-1 -mt-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></span>
-        </a>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="bg-grace-charcoal text-grace-cream pt-16 pb-8 border-t border-grace-beige/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-white/10">
-                
-                <!-- Col 1: Store Intro -->
-                <div class="space-y-4">
-                    <h3 class="font-serif text-2xl font-normal text-white">Grace Of Women</h3>
-                    <p class="text-xs text-grace-cream/70 leading-relaxed">
-                        Curating authentic handloom sarees from the weavers of Bengal and Bihar. Celebrating timeless heritage, slow fashion, and natural silk & cotton craft.
-                    </p>
-                    <div class="flex items-center space-x-3 text-sm">
-                        <a href="https://wa.me/917905691288" target="_blank" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-emerald-600 transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-grace-terracotta transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
-
-                <!-- Col 2: Categories -->
-                <div class="space-y-3">
-                    <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">Handloom Collections</h4>
-                    <ul class="space-y-2 text-xs text-grace-cream/70">
-                        <li><a href="#collections" class="hover:text-white transition-colors">Bengal Dhakai Jamdani</a></li>
-                        <li><a href="#collections" class="hover:text-white transition-colors">Bhagalpuri Tussar Silk</a></li>
-                        <li><a href="#collections" class="hover:text-white transition-colors">Bolpur Kantha Embroidery</a></li>
-                        <li><a href="#collections" class="hover:text-white transition-colors">Fulia Taant & Linen</a></li>
-                        <li><a href="#collections" class="hover:text-white transition-colors">Raw Tussar Ghicha</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3: Customer Care & WhatsApp -->
-                <div class="space-y-3">
-                    <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">Direct Assistance</h4>
-                    <ul class="space-y-2 text-xs text-grace-cream/70">
-                        <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400"></i> +91 7905691288</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-grace-terracotta"></i> graceofwomen.handloom@gmail.com</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-amber-400"></i> Direct Weaver Hubs: Fulia & Bhagalpur</li>
-                        <li class="pt-2"><a href="https://wa.me/917905691288?text=Hi%2C%20I%20want%20to%20track%20my%20order." target="_blank" class="text-emerald-400 hover:underline">Track Order via WhatsApp</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 4: Newsletter & Payments -->
-                <div class="space-y-4">
-                    <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">Join Handloom Lovers</h4>
-                    <p class="text-xs text-grace-cream/70">Subscribe for early access to new loom drops & festive discounts.</p>
-                    <div class="flex">
-                        <input type="email" id="newsletter-email" placeholder="Enter your email" class="bg-white/10 text-white placeholder:text-white/40 px-3 py-2 text-xs rounded-l-lg border border-white/20 focus:outline-none w-full">
-                        <button id="newsletter-btn" class="bg-grace-terracotta px-4 py-2 text-xs font-semibold rounded-r-lg hover:bg-grace-terracotta/90 transition-colors">Join</button>
-                    </div>
-                    <div class="pt-2">
-                        <span class="block text-[11px] text-white/50 mb-1">Accepted Payment Options:</span>
-                        <div class="flex items-center gap-2 text-xs text-white/70">
-                            <span class="bg-white/10 px-2 py-1 rounded">UPI (GPay/PhonePe)</span>
-                            <span class="bg-white/10 px-2 py-1 rounded">Cards</span>
-                            <span class="bg-white/10 px-2 py-1 rounded">COD</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="pt-8 text-center sm:flex sm:justify-between sm:items-center text-xs text-grace-cream/50">
-                <p>&copy; 2026 Grace Of Women. All Rights Reserved. Crafted with love for Indian Handlooms.</p>
-                <div class="mt-4 sm:mt-0 flex justify-center space-x-4">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Shipping & Returns</a>
-                    <a href="#" class="hover:text-white">Terms of Service</a>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Grace Of Women. Handloom Love By Pratibha. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Store Data & Application Logic -->
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-tooltip">
+        <i class="fa-solid fa-circle" style="color: #25D366; font-size: 8px;"></i> Live Support
+    </div>
+    <a href="https://wa.me/917905691288?text=Hi%20Grace%20Of%20Women,%20I'd%20like%20to%20inquire%20about%20a%20saree." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <img src="" id="modalImg" class="modal-img" alt="Saree Image">
+            <div class="modal-body">
+                <span class="product-region" id="modalRegion">BENGAL HANDLOOM</span>
+                <h3 class="modal-title" id="modalTitle">Saree Title</h3>
+                <div class="modal-price" id="modalPrice">₹0</div>
+                <p class="modal-desc" id="modalDesc">Detailed description...</p>
+                <ul class="spec-list">
+                    <li><span>Fabric:</span> <span id="modalFabric">Pure Cotton</span></li>
+                    <li><span>Weave Type:</span> <span id="modalWeave">Handloom</span></li>
+                    <li><span>Blouse Piece:</span> <span id="modalBlouse">Included</span></li>
+                    <li><span>Wash Care:</span> <span>Dry Clean / Gentle Handwash</span></li>
+                </ul>
+                <div style="display: flex; gap: 12px; margin-top: auto;">
+                    <button class="btn-primary" style="flex: 1;" id="modalAddCartBtn">Add to Bag</button>
+                    <a href="#" target="_blank" class="btn-whatsapp" id="modalWaBtn">
+                        <i class="fa-brands fa-whatsapp"></i> Ask on WA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer & Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h4>Your Shopping Bag</h4>
+            <button class="icon-btn" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items added dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Amount:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="btn-whatsapp" style="width: 100%; justify-content: center;" onclick="checkoutWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Complete Order on WhatsApp
+            </button>
+        </div>
+    </div>
+
     <script>
-        // Sample Product Data (Authentic Bengal & Bihar Sarees)
+        // Store Catalog Data (Bengal & Bihar Handloom Sarees)
         const products = [
             {
-                id: 'saree-1',
-                name: 'Featherlight White & Red Bengal Dhakai Jamdani',
-                category: 'bengal-jamdani',
-                origin: 'Handwoven in Fulia, West Bengal',
-                price: 2890,
-                mrp: 4200,
-                image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
-                badge: 'Best Seller',
-                fabric: '100% Pure Cotton Muslin Jamdani',
-                blouse: 'Includes unstitched running blouse piece (80cm)',
-                washCare: 'Dry Clean recommended for first wash; mild hand wash thereafter.',
-                description: 'Classic Bengal Lal-Paar Jamdani crafted with traditional geometric floral motifs. Extremely breathable, soft, and graceful for festivities.'
+                id: 1,
+                name: "Royal White & Gold Bengal Dhakai Jamdani",
+                category: "Jamdani",
+                region: "Fulia, West Bengal",
+                price: 3499,
+                originalPrice: 4299,
+                fabric: "Muslin Cotton Thread Work",
+                blouse: "Included (Unstitched)",
+                image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800",
+                desc: "Exquisite hand-woven Dhakai Jamdani saree featuring traditional geometric floral motifs woven painstakingly into ultra-soft white muslin cotton fabric."
             },
             {
-                id: 'saree-2',
-                name: 'Royal Honey Gold Bhagalpuri Pure Tussar Silk',
-                category: 'bhagalpuri-silk',
-                origin: 'Direct Loom from Bhagalpur, Bihar',
-                price: 5450,
-                mrp: 7500,
-                image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
-                badge: 'Silk Mark Certified',
-                fabric: '100% Organic Bhagalpuri Tussar Silk',
-                blouse: 'Contrast zari border blouse piece included',
-                washCare: 'Strictly Dry Clean only.',
-                description: 'Natural texture with rich golden sheen. Features hand-loomed temple zari borders. Ideal for weddings, puja, and high-profile gatherings.'
+                id: 2,
+                name: "Pure Bhagalpuri Tussar Silk Saree",
+                category: "Silk",
+                region: "Bhagalpur, Bihar",
+                price: 4899,
+                originalPrice: 5999,
+                fabric: "100% Pure Tussar Silk",
+                blouse: "Included (Matching Tussar)",
+                image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800",
+                desc: "Naturally textured Bhagalpuri Tussar Silk saree in warm earthy beige with rich hand-painted contrast borders and rich zari pallu."
             },
             {
-                id: 'saree-3',
-                name: 'Hand-Stitched Multicolored Bolpur Kantha Embroidery',
-                category: 'kantha-stitch',
-                origin: 'Handcrafted in Bolpur, West Bengal',
-                price: 4990,
-                mrp: 6800,
-                image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80',
-                badge: 'Artisan Special',
-                fabric: 'Pure Bishnupuri Silk Cotton Base',
-                blouse: 'Matching blouse piece with Kantha sleeve border included',
-                washCare: 'Dry Clean only.',
-                description: 'Takes 45 days of painstaking hand stitching by rural women artisans. Features traditional village folk motifs and detailed running stitch.'
+                id: 3,
+                name: "Bolpur Hand-embroidered Kantha Stitch",
+                category: "Kantha",
+                region: "Bolpur Santiniketan, Bengal",
+                price: 3999,
+                originalPrice: 4799,
+                fabric: "Soft Bangalore Silk / Cotton",
+                blouse: "Included with Kantha Work",
+                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800",
+                desc: "Entirely handcrafted by rural women artisans of Shantiniketan using traditional running stitch embroidery detailing floral and village life motifs."
             },
             {
-                id: 'saree-4',
-                name: 'Pastel Sage Green Fulia Breathable Soft Linen Handloom',
-                category: 'taant-linen',
-                origin: 'Woven in Santipur-Fulia Hub',
-                price: 2150,
-                mrp: 3200,
-                image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
-                badge: 'Summer Essential',
-                fabric: 'Organic Linen-Cotton Blend',
-                blouse: 'Contrast printed blouse piece included',
-                washCare: 'Gentle hand wash in cold water with mild liquid detergent.',
-                description: 'Soothe your soul with this whisper-soft linen saree. Features minimalist silver zari selvedge and pom-pom tassel finish on the pallu.'
+                id: 4,
+                name: "Pastel Mint Green Fulia Soft Linen Saree",
+                category: "Linen",
+                region: "Fulia, West Bengal",
+                price: 2799,
+                originalPrice: 3499,
+                fabric: "120 Count Pure Organic Linen",
+                blouse: "Included (Running Linen)",
+                image: "https://images.unsplash.com/photo-1610030469888-2996d9e03d3c?auto=format&fit=crop&q=80&w=800",
+                desc: "Breathable and airy soft linen saree in a delicate pastel mint green shade with fine metallic silver zari border, perfect for summer elegance."
             },
             {
-                id: 'saree-5',
-                name: 'Textured Natural Off-White Tussar Ghicha Saree',
-                category: 'tussar-ghicha',
-                origin: 'Handspun in Banka-Bhagalpur Belt, Bihar',
-                price: 4300,
-                mrp: 6200,
-                image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
-                badge: 'Raw Texture',
-                fabric: 'Pure Unrefined Ghicha Tussar Silk',
-                blouse: 'Solid Tussar blouse piece included',
-                washCare: 'Dry Clean only.',
-                description: 'Features raw organic slub texture that gives an understated royal look. Comes with vibrant maroon stripes on the pallu.'
+                id: 5,
+                name: "Deep Crimson Red Jamdani Silk Blend",
+                category: "Jamdani",
+                region: "Shantipur, West Bengal",
+                price: 3850,
+                originalPrice: 4500,
+                fabric: "Resham Silk Jamdani Thread",
+                blouse: "Included",
+                image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=800",
+                desc: "Vibrant festive crimson red saree crafted with contrast gold zari thread work in intricate traditional motif layouts."
             },
             {
-                id: 'saree-6',
-                name: 'Classic Black & Gold Resham Dhakai Jamdani',
-                category: 'bengal-jamdani',
-                origin: 'Nadia Loom Cluster, West Bengal',
-                price: 3490,
-                mrp: 4990,
-                image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
-                badge: 'Partywear',
-                fabric: 'Soft Cotton-Silk Jamdani Blend',
-                blouse: 'Self-pattern blouse piece included',
-                washCare: 'Dry clean recommended.',
-                description: 'An enchanting evening wear saree adorned with metallic zari floral bootis all over the body. Light as air, rich in appeal.'
-            },
-            {
-                id: 'saree-7',
-                name: 'Deep Crimson Red Murshidabad Silk Kantha Saree',
-                category: 'kantha-stitch',
-                origin: 'Murshidabad Weaving Hub',
-                price: 5800,
-                mrp: 8100,
-                image: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80',
-                badge: 'Silk Mark Certified',
-                fabric: '100% Murshidabad Pure Silk',
-                blouse: 'Heavy Kantha embroidery blouse piece included',
-                washCare: 'Dry Clean only.',
-                description: 'Rich crimson silk adorned with off-white bird and mandala needlework motifs. Pure elegance for bride and close relatives.'
-            },
-            {
-                id: 'saree-8',
-                name: 'Earthy Indigo Organic Cotton Taant Handloom',
-                category: 'taant-linen',
-                origin: 'Santipur Weaver Cooperative',
-                price: 1850,
-                mrp: 2600,
-                image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
-                badge: 'Daily Comfort',
-                fabric: '100% Combed Pure Cotton',
-                blouse: 'Contrast Indigo blouse piece included',
-                washCare: 'Hand wash separately with cold water.',
-                description: 'Super soft traditional Bengal Taant reimagined for contemporary comfort. Features skin-friendly natural dyes.'
+                id: 6,
+                name: "Handblocked Bihar Matka Tussar Silk",
+                category: "Silk",
+                region: "Bhagalpur, Bihar",
+                price: 5200,
+                originalPrice: 6200,
+                fabric: "Pure Matka Tussar Silk",
+                blouse: "Included",
+                image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800",
+                desc: "Rustic and elegant Matka Tussar saree with authentic wood-block floral printing and hand-twisted tassels on the pallu."
             }
         ];
 
-        // Application State
         let cart = [];
-        let currentFilter = 'all';
-        let searchQuery = '';
-        let discountPercentage = 0;
+        let activeCategory = 'all';
 
-        // Target WhatsApp Number
-        const WA_PHONE = "917905691288";
-
-        // DOM Elements
-        const productGrid = document.getElementById('product-grid');
-        const noProducts = document.getElementById('no-products');
-        const cartDrawer = document.getElementById('cart-drawer');
-        const cartBackdrop = document.getElementById('cart-drawer-backdrop');
-        const openCartBtn = document.getElementById('open-cart-btn');
-        const closeCartBtn = document.getElementById('close-cart-btn');
-        const cartBadge = document.getElementById('cart-badge');
-        const cartCountTitle = document.getElementById('cart-count-title');
-        const cartItemsContainer = document.getElementById('cart-items-container');
-        const cartSubtotalEl = document.getElementById('cart-subtotal');
-        const cartDiscountEl = document.getElementById('cart-discount');
-        const cartTotalEl = document.getElementById('cart-total');
-        const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
-        const couponInput = document.getElementById('coupon-input');
-        const applyCouponBtn = document.getElementById('apply-coupon-btn');
-        const couponMessage = document.getElementById('coupon-message');
-        const searchInput = document.getElementById('search-input');
-        const mobileSearchInput = document.getElementById('mobile-search-input');
-        const quickviewModal = document.getElementById('quickview-modal');
-        const closeQuickviewBtn = document.getElementById('close-quickview-btn');
-        const quickviewContent = document.getElementById('quickview-content');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        // Render Product Cards
-        function renderProducts() {
-            productGrid.innerHTML = '';
-
-            const filtered = products.filter(p => {
-                const matchesCategory = (currentFilter === 'all') || (p.category === currentFilter);
-                const matchesSearch = p.name.toLowerCase().includes(searchQuery) ||
-                                      p.origin.toLowerCase().includes(searchQuery) ||
-                                      p.fabric.toLowerCase().includes(searchQuery);
-                return matchesCategory && matchesSearch;
-            });
-
-            if (filtered.length === 0) {
-                noProducts.classList.remove('hidden');
+        // Render Products to Grid
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            if (items.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
+                    <i class="fa-solid fa-box-open" style="font-size: 2rem; margin-bottom: 12px;"></i>
+                    <p>No sarees found matching your search. Try adjusting filters!</p>
+                </div>`;
                 return;
-            } else {
-                noProducts.classList.add('hidden');
             }
 
-            filtered.forEach(product => {
-                const waMessage = encodeURIComponent(`Hi Grace Of Women, I am interested in purchasing this saree:\n\n*Product:* ${product.name}\n*Price:* ₹${product.price.toLocaleString('en-IN')}\n*Link:* https://graceofwomen.com/#${product.id}\n\nPlease share live photos/videos.`);
-                const waUrl = `https://wa.me/${WA_PHONE}?text=${waMessage}`;
-
-                const card = document.createElement('div');
-                card.className = 'bg-white rounded-2xl border border-grace-beige/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group';
+            grid.innerHTML = items.map(product => {
+                const waMessage = encodeURIComponent(`Hi Grace Of Women! I am interested in buying the *${product.name}* (Price: ₹${product.price.toLocaleString('en-IN')}). Please share more live photos/details.`);
                 
-                card.innerHTML = `
-                    <div class="relative overflow-hidden aspect-[3/4] bg-grace-beige/20">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x800/E8D3CD/2C2B29?text=${encodeURIComponent(product.name)}'">
-                        
-                        <div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
-                            <span class="bg-grace-terracotta text-white text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full shadow-sm">${product.badge}</span>
+                return `
+                    <div class="product-card">
+                        <span class="product-badge">${product.category}</span>
+                        <div class="product-img-wrapper" onclick="openModal(${product.id})">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy">
                         </div>
-
-                        <!-- Quick Action Overlay -->
-                        <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openQuickview('${product.id}')" class="flex-1 bg-white/95 hover:bg-white text-grace-charcoal text-xs font-medium py-2 rounded-lg shadow transition-colors flex items-center justify-center gap-1">
-                                <i class="fa-regular fa-eye"></i> Quick View
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
-                        <div>
-                            <span class="text-[11px] font-medium text-grace-sage uppercase tracking-wider flex items-center gap-1">
-                                <i class="fa-solid fa-location-dot text-[10px]"></i> ${product.origin}
-                            </span>
-                            <h3 class="font-serif font-semibold text-grace-charcoal text-base mt-1 line-clamp-2 hover:text-grace-terracotta transition-colors">
-                                ${product.name}
-                            </h3>
-                        </div>
-
-                        <div class="space-y-2 pt-1 border-t border-grace-beige/60">
-                            <div class="flex items-baseline justify-between">
-                                <div class="flex items-baseline gap-2">
-                                    <span class="font-serif font-bold text-lg text-grace-charcoal">₹${product.price.toLocaleString('en-IN')}</span>
-                                    <span class="text-xs text-grace-charcoal/50 line-through">₹${product.mrp.toLocaleString('en-IN')}</span>
-                                </div>
-                                <span class="text-[11px] text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded">
-                                    ${Math.round(((product.mrp - product.price) / product.mrp) * 100)}% OFF
-                                </span>
+                        <div class="product-content">
+                            <div class="product-region"><i class="fa-solid fa-location-dot"></i> ${product.region}</div>
+                            <h4 class="product-title" onclick="openModal(${product.id})" style="cursor:pointer;">${product.name}</h4>
+                            <div class="product-details">
+                                <span><i class="fa-solid fa-feather"></i> ${product.fabric.split(' ')[0]} ${product.fabric.split(' ')[1] || ''}</span>
                             </div>
-
-                            <div class="grid grid-cols-2 gap-2 pt-1">
-                                <button onclick="addToCart('${product.id}')" class="w-full bg-grace-beige hover:bg-grace-sage-light text-grace-charcoal text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1">
-                                    <i class="fa-solid fa-bag-shopping"></i> Add to Bag
-                                </button>
-                                <a href="${waUrl}" target="_blank" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1 text-center">
-                                    <i class="fa-brands fa-whatsapp text-sm"></i> Enquire
-                                </a>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <span class="price-current">₹${product.price.toLocaleString('en-IN')}</span>
+                                    <span class="price-original">₹${product.originalPrice.toLocaleString('en-IN')}</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="https://wa.me/917905691288?text=${waMessage}" target="_blank" class="btn-card-wa" title="Enquire on WhatsApp">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <button class="btn-add-cart" onclick="addToCart(${product.id})">
+                                        <i class="fa-solid fa-plus"></i> Bag
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 `;
-                productGrid.appendChild(card);
-            });
+            }).join('');
         }
 
-        // Add Product to Cart
+        // Filter Logic
+        function filterCategory(cat, btn) {
+            activeCategory = cat;
+            document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            applyFilters();
+        }
+
+        function filterProducts() {
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(p => {
+                const matchesCat = activeCategory === 'all' || p.category === activeCategory;
+                const matchesQuery = p.name.toLowerCase().includes(query) || 
+                                     p.fabric.toLowerCase().includes(query) || 
+                                     p.region.toLowerCase().includes(query);
+                return matchesCat && matchesQuery;
+            });
+            renderProducts(filtered);
+        }
+
+        // Quick View Modal Logic
+        function openModal(productId) {
+            const p = products.find(prod => prod.id === productId);
+            if (!p) return;
+
+            document.getElementById('modalImg').src = p.image;
+            document.getElementById('modalRegion').innerText = p.region;
+            document.getElementById('modalTitle').innerText = p.name;
+            document.getElementById('modalPrice').innerText = `₹${p.price.toLocaleString('en-IN')}`;
+            document.getElementById('modalDesc').innerText = p.desc;
+            document.getElementById('modalFabric').innerText = p.fabric;
+            document.getElementById('modalWeave').innerText = `${p.category} Handloom Work`;
+            document.getElementById('modalBlouse').innerText = p.blouse;
+
+            const waMsg = encodeURIComponent(`Hi Grace Of Women! I have a query about *${p.name}* (₹${p.price}).`);
+            document.getElementById('modalWaBtn').href = `https://wa.me/917905691288?text=${waMsg}`;
+            document.getElementById('modalAddCartBtn').onclick = () => { addToCart(p.id); closeModal(); };
+
+            document.getElementById('quickViewModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('quickViewModal').classList.remove('active');
+        }
+
+        // Cart Drawer Logic
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('open');
+            document.getElementById('cartOverlay').classList.toggle('open');
+        }
+
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
-            if (!product) return;
+            const existing = cart.find(item => item.id === productId);
 
-            const existingIndex = cart.findIndex(item => item.id === productId);
-            if (existingIndex > -1) {
-                cart[existingIndex].quantity += 1;
+            if (existing) {
+                existing.qty += 1;
             } else {
-                cart.push({ ...product, quantity: 1 });
+                cart.push({ ...product, qty: 1 });
             }
 
             updateCartUI();
-            openCart();
+            toggleCart();
         }
 
-        // Update Cart UI & Summary
+        function updateQty(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+
+            item.qty += change;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            updateCartUI();
+        }
+
         function updateCartUI() {
-            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            
-            // Update badges
-            if (totalCount > 0) {
-                cartBadge.textContent = totalCount;
-                cartBadge.classList.remove('hidden');
-            } else {
-                cartBadge.classList.add('hidden');
-            }
-            cartCountTitle.textContent = `(${totalCount})`;
+            const countEl = document.getElementById('cart-count');
+            const itemsContainer = document.getElementById('cartItems');
+            const totalEl = document.getElementById('cartTotal');
 
-            // Render Cart Items
-            cartItemsContainer.innerHTML = '';
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            countEl.innerText = totalItems;
+            totalEl.innerText = `₹${totalPrice.toLocaleString('en-IN')}`;
 
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="text-center py-12 space-y-3">
-                        <i class="fa-solid fa-bag-shopping text-4xl text-grace-beige"></i>
-                        <p class="text-xs text-grace-charcoal/70">Your shopping bag is empty.</p>
-                        <button onclick="closeCart()" class="text-xs text-grace-terracotta font-semibold hover:underline">Explore Sarees</button>
-                    </div>
-                `;
-            } else {
-                cart.forEach((item, index) => {
-                    const itemEl = document.createElement('div');
-                    itemEl.className = 'flex gap-3 bg-white p-3 rounded-xl border border-grace-beige shadow-sm items-center';
-                    itemEl.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" class="w-16 h-20 object-cover object-top rounded-lg bg-grace-cream" onerror="this.src='https://placehold.co/200x250/E8D3CD/2C2B29?text=Saree'">
-                        <div class="flex-1 min-w-0">
-                            <h4 class="text-xs font-semibold text-grace-charcoal truncate">${item.name}</h4>
-                            <p class="text-[11px] text-grace-sage mt-0.5">${item.origin}</p>
-                            <p class="font-serif font-bold text-xs text-grace-charcoal mt-1">₹${(item.price * item.quantity).toLocaleString('en-IN')}</p>
-                            
-                            <div class="flex items-center gap-2 mt-2">
-                                <div class="flex items-center border border-grace-beige rounded-md bg-grace-cream">
-                                    <button onclick="changeQty(${index}, -1)" class="px-2 py-0.5 text-xs text-grace-charcoal hover:bg-grace-beige rounded-l-md">-</button>
-                                    <span class="px-2 text-xs font-semibold">${item.quantity}</span>
-                                    <button onclick="changeQty(${index}, 1)" class="px-2 py-0.5 text-xs text-grace-charcoal hover:bg-grace-beige rounded-r-md">+</button>
-                                </div>
-                                <button onclick="removeFromCart(${index})" class="text-[11px] text-red-500 hover:underline ml-auto">
-                                    <i class="fa-regular fa-trash-can"></i> Remove
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                    cartItemsContainer.appendChild(itemEl);
-                });
-            }
-
-            // Calculations
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const discount = Math.round(subtotal * (discountPercentage / 100));
-            const total = Math.max(0, subtotal - discount);
-
-            cartSubtotalEl.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
-            cartDiscountEl.textContent = `-₹${discount.toLocaleString('en-IN')}`;
-            cartTotalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
-        }
-
-        // Change Quantity in Cart
-        function changeQty(index, delta) {
-            if (cart[index]) {
-                cart[index].quantity += delta;
-                if (cart[index].quantity <= 0) {
-                    cart.splice(index, 1);
-                }
-                updateCartUI();
-            }
-        }
-
-        // Remove from Cart
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        // Cart Drawer Control Functions
-        function openCart() {
-            cartDrawer.classList.remove('translate-x-full');
-            cartBackdrop.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCart() {
-            cartDrawer.classList.add('translate-x-full');
-            cartBackdrop.classList.add('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Open Quickview Modal
-        function openQuickview(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-
-            const waMessage = encodeURIComponent(`Hi Grace Of Women, I would like to order / ask about this saree:\n\n*Product:* ${product.name}\n*Price:* ₹${product.price.toLocaleString('en-IN')}\n*Fabric:* ${product.fabric}\n*Origin:* ${product.origin}`);
-            const waUrl = `https://wa.me/${WA_PHONE}?text=${waMessage}`;
-
-            quickviewContent.innerHTML = `
-                <div class="rounded-xl overflow-hidden bg-grace-cream aspect-[3/4] relative">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/600x800/E8D3CD/2C2B29?text=Saree'">
-                    <span class="absolute top-3 left-3 bg-grace-terracotta text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">${product.badge}</span>
-                </div>
-                <div class="space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-semibold text-grace-sage uppercase tracking-wider">${product.origin}</span>
-                        <h2 class="font-serif font-semibold text-xl text-grace-charcoal mt-1">${product.name}</h2>
-                        <div class="flex items-baseline gap-3 mt-2">
-                            <span class="font-serif font-bold text-2xl text-grace-charcoal">₹${product.price.toLocaleString('en-IN')}</span>
-                            <span class="text-sm text-grace-charcoal/50 line-through">₹${product.mrp.toLocaleString('en-IN')}</span>
-                            <span class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Silk Mark Handloom</span>
-                        </div>
-                    </div>
-
-                    <p class="text-xs text-grace-charcoal/80 leading-relaxed">${product.description}</p>
-
-                    <div class="space-y-2 border-t border-b border-grace-beige py-3 text-xs">
-                        <div class="flex justify-between">
-                            <span class="font-semibold text-grace-charcoal">Fabric:</span>
-                            <span class="text-grace-charcoal/80">${product.fabric}</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-semibold text-grace-charcoal">Blouse Piece:</span>
-                            <span class="text-grace-charcoal/80">${product.blouse}</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-semibold text-grace-charcoal">Wash Care:</span>
-                            <span class="text-grace-charcoal/80">${product.washCare}</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <button onclick="addToCart('${product.id}'); closeQuickview();" class="w-full bg-grace-terracotta hover:bg-grace-terracotta/90 text-white font-medium py-3 rounded-lg text-xs transition-colors shadow-sm flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-bag-shopping"></i> Add to Shopping Bag
-                        </button>
-                        <a href="${waUrl}" target="_blank" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-3 rounded-lg text-xs transition-colors flex items-center justify-center gap-2 text-center">
-                            <i class="fa-brands fa-whatsapp text-base"></i> Buy / Request Live Video Call
-                        </a>
-                    </div>
-                </div>
-            `;
-
-            quickviewModal.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeQuickview() {
-            quickviewModal.classList.add('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'auto';
-        }
-
-        // WhatsApp Bag Checkout Handler
-        function triggerWhatsAppCheckout() {
-            if (cart.length === 0) {
-                alert('Your shopping bag is empty! Please add some sarees first.');
+                itemsContainer.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 40px 0;">Your shopping bag is empty.</div>`;
                 return;
             }
 
-            let message = `*NEW ORDER - GRACE OF WOMEN WEBSITE*\n\n`;
-            message += `Hello! I would like to place an order for the following handloom sarees:\n\n`;
-
-            cart.forEach((item, index) => {
-                message += `${index + 1}. *${item.name}*\n   - Origin: ${item.origin}\n   - Qty: ${item.quantity}\n   - Price: ₹${(item.price * item.quantity).toLocaleString('en-IN')}\n\n`;
-            });
-
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const discount = Math.round(subtotal * (discountPercentage / 100));
-            const total = Math.max(0, subtotal - discount);
-
-            message += `-------------------------\n`;
-            message += `*Subtotal:* ₹${subtotal.toLocaleString('en-IN')}\n`;
-            if (discount > 0) {
-                message += `*Discount Applied:* -₹${discount.toLocaleString('en-IN')}\n`;
-            }
-            message += `*Delivery Charge:* FREE (Across India)\n`;
-            message += `*Total Amount:* ₹${total.toLocaleString('en-IN')}\n\n`;
-            message += `Please confirm availability and share payment/delivery address details. Thank you!`;
-
-            const waLink = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
-            window.open(waLink, '_blank');
+            itemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image}" class="cart-item-img" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')}</div>
+                        <div class="cart-item-qty">
+                            <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        // Event Listeners Initialization
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
+        // Checkout via WhatsApp
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert("Your bag is empty! Add some sarees first.");
+                return;
+            }
 
-            // Category Filter Buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    document.querySelectorAll('.filter-btn').forEach(b => {
-                        b.classList.remove('active', 'bg-grace-terracotta', 'text-white', 'shadow-sm');
-                        b.classList.add('bg-white', 'text-grace-charcoal', 'border', 'border-grace-beige');
-                    });
+            let message = "Hello Grace Of Women! I would like to place an order for the following sarees:\n\n";
+            let total = 0;
 
-                    e.target.classList.add('active', 'bg-grace-terracotta', 'text-white', 'shadow-sm');
-                    e.target.classList.remove('bg-white', 'text-grace-charcoal', 'border', 'border-grace-beige');
-
-                    currentFilter = e.target.dataset.category;
-                    renderProducts();
-                });
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                message += `${index + 1}. *${item.name}*\n   Qty: ${item.qty} x ₹${item.price.toLocaleString('en-IN')} = ₹${subtotal.toLocaleString('en-IN')}\n`;
             });
 
-            // Search Inputs
-            const handleSearch = (e) => {
-                searchQuery = e.target.value.toLowerCase().trim();
-                renderProducts();
-            };
-            searchInput.addEventListener('input', handleSearch);
-            mobileSearchInput.addEventListener('input', handleSearch);
+            message += `\n*Total Amount:* ₹${total.toLocaleString('en-IN')}\n\nPlease confirm availability and payment options. Thank you!`;
 
-            // Reset Filter Btn
-            document.getElementById('reset-filter-btn').addEventListener('click', () => {
-                currentFilter = 'all';
-                searchQuery = '';
-                searchInput.value = '';
-                mobileSearchInput.value = '';
-                
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    if(b.dataset.category === 'all') {
-                        b.click();
-                    }
-                });
-            });
+            const waUrl = `https://wa.me/917905691288?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        }
 
-            // Cart Drawer Actions
-            openCartBtn.addEventListener('click', openCart);
-            closeCartBtn.addEventListener('click', closeCart);
-            cartBackdrop.addEventListener('click', closeCart);
-
-            // Quickview Modal Actions
-            closeQuickviewBtn.addEventListener('click', closeQuickview);
-            quickviewModal.addEventListener('click', (e) => {
-                if (e.target === quickviewModal) closeQuickview();
-            });
-
-            // Mobile Menu Toggle
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-            });
-
-            // Coupon Code Application
-            applyCouponBtn.addEventListener('click', () => {
-                const code = couponInput.value.trim().toUpperCase();
-                if (code === 'GRACE10') {
-                    discountPercentage = 10;
-                    couponMessage.textContent = '✓ Coupon GRACE10 applied (10% OFF)';
-                    couponMessage.className = 'text-[11px] font-medium text-emerald-700 block';
-                } else if (code === 'HANDLOOM15') {
-                    discountPercentage = 15;
-                    couponMessage.textContent = '✓ Coupon HANDLOOM15 applied (15% OFF)';
-                    couponMessage.className = 'text-[11px] font-medium text-emerald-700 block';
-                } else {
-                    discountPercentage = 0;
-                    couponMessage.textContent = '✕ Invalid coupon code. Try GRACE10';
-                    couponMessage.className = 'text-[11px] font-medium text-red-600 block';
-                }
-                updateCartUI();
-            });
-
-            // WhatsApp Checkout Button
-            whatsappCheckoutBtn.addEventListener('click', triggerWhatsAppCheckout);
-
-            // Newsletter Subscription
-            document.getElementById('newsletter-btn').addEventListener('click', () => {
-                const email = document.getElementById('newsletter-email').value;
-                if (email && email.includes('@')) {
-                    alert('Thank you for subscribing to Grace Of Women updates!');
-                    document.getElementById('newsletter-email').value = '';
-                } else {
-                    alert('Please enter a valid email address.');
-                }
-            });
-        });
+        // Initial Initialization
+        renderProducts(products);
     </script>
 </body>
 </html>
