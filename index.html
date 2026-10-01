@@ -1,6 +1,4 @@
 HTML
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -807,8 +805,8 @@ HTML
                 </div>
             </div>
             <div class="hero-image-grid">
-                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=600" alt="Royal Purple Saree Front" class="hero-img">
-                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=600" alt="Royal Purple Saree Pallu" class="hero-img">
+                <img src="images/1.jpg" alt="Royal Purple Saree Front" class="hero-img">
+                <img src="images/2.jpg" alt="Royal Purple Saree Pallu" class="hero-img">
             </div>
         </div>
     </section>
@@ -829,7 +827,7 @@ HTML
                 <div class="main-view-container">
                     <span class="shipping-tag"><i class="fa-solid fa-truck-fast"></i> Free Shipping</span>
                     <span class="view-tag" id="currentViewTag">Front View</span>
-                    <img id="mainImage" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800" alt="Royal Purple Pure Silk Linen Saree">
+                    <img id="mainImage" src="images/1.jpg" alt="Royal Purple Pure Silk Linen Saree">
                 </div>
                 <!-- 4 Interactive Thumbnails -->
                 <div class="thumbnails-grid" id="thumbGrid">
@@ -937,24 +935,12 @@ HTML
     </div>
 
     <script>
-        // Saree Data with 4 Distinct View Images
+        // Saree Data with 4 Images from the images/ folder
         const sareeViews = [
-            {
-                label: "Front View",
-                image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                label: "Back View",
-                image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                label: "Side View",
-                image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800"
-            },
-            {
-                label: "Close-up View",
-                image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=800"
-            }
+            { label: "Front View", image: "images/1.jpg" },
+            { label: "Back View", image: "images/2.jpg" },
+            { label: "Side View", image: "images/3.jpg" },
+            { label: "Close-up View", image: "images/4.jpg" }
         ];
 
         let activeIndex = 0;
